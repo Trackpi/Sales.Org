@@ -27,7 +27,7 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const SplashScreen());
 
       case loginScreen:
-        // Return a MaterialPageRoute that loads the SplashScreen widget
+        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const LoginScreen());
 
       // Default case when no matching route is found
