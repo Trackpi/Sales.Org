@@ -71,7 +71,10 @@ class WavePainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
       ..shader = LinearGradient(
-        colors: [Color(0xffFE8900), Color(0xffFEDC3F)],
+        colors: [
+          Color(0xffFEDC3F),
+          Color(0xffFE8900),
+        ],
         begin: Alignment.centerLeft,
         end: Alignment.centerRight,
       ).createShader(Rect.fromLTWH(0, 0, size.width, size.height))
