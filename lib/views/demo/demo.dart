@@ -1,19 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: WaveBackgroundScreen(),
-    );
-  }
-}
-
 class WaveBackgroundScreen extends StatefulWidget {
   @override
   _WaveBackgroundScreenState createState() => _WaveBackgroundScreenState();
@@ -39,13 +26,13 @@ class _WaveBackgroundScreenState extends State<WaveBackgroundScreen>
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
           setState(() {
-            // Change to a solid color after animation completes
+            // Change to a solid yellow color after animation completes
             _controller.stop();
           });
         }
       });
 
-    _controller.repeat();
+    _controller.forward();
   }
 
   @override
@@ -57,9 +44,19 @@ class _WaveBackgroundScreenState extends State<WaveBackgroundScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomPaint(
-        painter: WavePainter(_animation.value),
-        child: Container(),
+      body: Stack(
+        children: [
+          Container(
+            height: double.infinity,
+            width: double.infinity,
+            color:
+                Color.lerp(Color(0xffFE8900), Colors.yellow, _animation.value),
+          ),
+          CustomPaint(
+            painter: WavePainter(_animation.value),
+            child: Container(),
+          ),
+        ],
       ),
     );
   }
@@ -73,7 +70,7 @@ class WavePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = Color(0xffFE8900).withOpacity(animationValue)
+      ..color = Color(0xffFE8900).withOpacity(1.0)
       ..style = PaintingStyle.fill;
 
     final path = Path();
