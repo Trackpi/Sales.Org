@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sales_org/gen/assets.gen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -30,7 +31,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 //Company logo
                 Image.asset(
-                  "assets/images/logo.png",
+                  Assets.png.logo.path,
                   height: 96,
                 ),
                 SizedBox(
