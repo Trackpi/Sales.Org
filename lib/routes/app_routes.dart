@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sales_org/views/login_screen/login_screen.dart';
 import 'package:sales_org/views/splash_screen/splash_screen.dart';
 
 /// This class manages the routes for the application.
@@ -6,6 +7,7 @@ import 'package:sales_org/views/splash_screen/splash_screen.dart';
 class AppRoutes {
   /// The route name for the splash screen.
   static const String splashScreen = '/';
+  static const String loginScreen = '/LoginScreen';
 
   /// Generates the appropriate route based on the given [settings].
   ///
@@ -23,6 +25,10 @@ class AppRoutes {
       case splashScreen:
         // Return a MaterialPageRoute that loads the SplashScreen widget
         return MaterialPageRoute(builder: (_) => const SplashScreen());
+
+      case loginScreen:
+        // Return a MaterialPageRoute that loads the SplashScreen widget
+        return MaterialPageRoute(builder: (_) => const LoginScreen());
 
       // Default case when no matching route is found
       default:
