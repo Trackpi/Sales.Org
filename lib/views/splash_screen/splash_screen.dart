@@ -30,7 +30,11 @@ class SplashScreen extends StatelessWidget {
               width: 200,
               color: Colors.white,
             ),
-            SvgPicture.asset(Assets.svg.trackpiLogo),
+            SvgPicture.asset(
+              Assets.svg.trackpiLogo,
+              height: 200,
+              width: 200,
+            ),
           ],
         ),
       ),
