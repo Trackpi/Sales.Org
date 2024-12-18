@@ -49,12 +49,12 @@ class _WaveBackgroundScreenState extends State<WaveBackgroundScreen>
           Container(
             height: double.infinity,
             width: double.infinity,
-            color:
-                Color.lerp(Color(0xffFE8900), Colors.yellow, _animation.value),
+            color: Colors.white, // Initial background color
           ),
-          CustomPaint(
-            painter: WavePainter(_animation.value),
-            child: Container(),
+          Positioned.fill(
+            child: CustomPaint(
+              painter: WavePainter(_animation.value),
+            ),
           ),
         ],
       ),
@@ -70,29 +70,31 @@ class WavePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = Color(0xffFE8900).withOpacity(1.0)
+      ..color = Colors.yellow
       ..style = PaintingStyle.fill;
 
     final path = Path();
-
-    final waveHeight =
-        20.0 + 20.0 * animationValue; // Adjust wave height with animation
+    final waveHeight = 20.0; // Fixed wave height for simplicity
     final waveLength = size.width;
 
     path.moveTo(0, size.height * (1 - animationValue));
-    path.lineTo(0, size.height * (1 - animationValue) * 0.75);
+    path.lineTo(0, size.height);
 
     for (double i = 0; i <= waveLength; i++) {
-      final y = size.height * (1 - animationValue) * 0.75 +
+      final y = size.height * (1 - animationValue) +
           waveHeight *
-              sin((i / waveLength * 2 * pi) - (animationValue * 2 * pi));
+              sin((i / waveLength * 2 * pi) + (animationValue * 2 * pi));
       path.lineTo(i, y);
     }
 
-    path.lineTo(size.width, size.height * (1 - animationValue));
+    path.lineTo(size.width, size.height);
     path.close();
 
     canvas.drawPath(path, paint);
+
+    if (animationValue == 1.0) {
+      canvas.drawRect(Rect.fromLTWH(0, 0, size.width, size.height), paint);
+    }
   }
 
   @override
