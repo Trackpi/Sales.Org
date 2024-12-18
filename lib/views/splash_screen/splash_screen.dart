@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sales_org/gen/assets.gen.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -24,18 +23,7 @@ class SplashScreen extends StatelessWidget {
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              height: 200,
-              width: 200,
-              color: Colors.white,
-            ),
-            SvgPicture.asset(
-              Assets.svg.trackpiLogo,
-              height: 200,
-              width: 200,
-            ),
-          ],
+          children: [Image.asset(Assets.png.logo.path)],
         ),
       ),
     );
