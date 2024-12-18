@@ -22,8 +22,32 @@ class SplashScreen extends StatelessWidget {
           ),
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [Image.asset(Assets.png.logo.path)],
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Image.asset(Assets.png.logo.path),
+            SizedBox(
+              height: 255,
+            ),
+            Container(
+              alignment: Alignment.center,
+              width: 313,
+              height: 49,
+              child: Text(
+                "Get Started",
+                style: TextStyle(
+                    color: Color(0xffFE8900),
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold),
+              ),
+              decoration: BoxDecoration(
+                color: Color(0xFFFFFFFF),
+                borderRadius: BorderRadius.circular(8),
+              ),
+            ),
+            SizedBox(
+              height: 100,
+            )
+          ],
         ),
       ),
     );
