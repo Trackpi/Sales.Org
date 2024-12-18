@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sales_org/gen/assets.gen.dart';
+import 'package:sales_org/routes/app_routes.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -28,20 +29,25 @@ class SplashScreen extends StatelessWidget {
             SizedBox(
               height: 255,
             ),
-            Container(
-              alignment: Alignment.center,
-              width: 313,
-              height: 49,
-              child: Text(
-                "Get Started",
-                style: TextStyle(
-                    color: Color(0xffFE8900),
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold),
-              ),
-              decoration: BoxDecoration(
-                color: Color(0xFFFFFFFF),
-                borderRadius: BorderRadius.circular(8),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, AppRoutes.loginScreen);
+              },
+              child: Container(
+                alignment: Alignment.center,
+                width: 313,
+                height: 49,
+                child: Text(
+                  "Get Started",
+                  style: TextStyle(
+                      color: Color(0xffFE8900),
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
+                ),
+                decoration: BoxDecoration(
+                  color: Color(0xFFFFFFFF),
+                  borderRadius: BorderRadius.circular(8),
+                ),
               ),
             ),
             SizedBox(
