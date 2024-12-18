@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sales_org/routes/app_routes.dart';
+import 'package:sales_org/views/demo/demo.dart';
 import 'package:sales_org/views/splash_screen/splash_screen.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
        onGenerateRoute: AppRoutes.generateRoute,
         initialRoute: AppRoutes.splashScreen,
       debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
+      home:  WaveBackgroundScreen(),
     );
   }
 }
