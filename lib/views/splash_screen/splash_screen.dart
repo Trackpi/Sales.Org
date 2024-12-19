@@ -75,7 +75,7 @@ class _SplashScreenState extends State<SplashScreen>
                 child: Align(
                   alignment: Alignment.center,
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 250),
+                    padding: const EdgeInsets.only(top: 180),
                     child: const Text(
                       "Your Strategic Growth Partner",
                       style: TextStyle(

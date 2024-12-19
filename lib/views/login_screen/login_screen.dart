@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sales_org/gen/assets.gen.dart';
+import 'package:sales_org/views/bottom_navbar/bottom_navbar.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -171,20 +172,29 @@ class LoginScreen extends StatelessWidget {
                   height: 30,
                 ),
                 //login button
-                Container(
-                  alignment: Alignment.center,
-                  height: 50,
-                  child: Text(
-                    "Log In",
-                    style: TextStyle(
-                      color: Color(0xFFFFFFFF),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => BottomNavbar(),
+                        ));
+                  },
+                  child: Container(
+                    alignment: Alignment.center,
+                    height: 50,
+                    child: Text(
+                      "Log In",
+                      style: TextStyle(
+                        color: Color(0xFFFFFFFF),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
                     ),
-                  ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Color(0xFFFCB205),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFFFCB205),
+                    ),
                   ),
                 ),
                 SizedBox(
