@@ -86,6 +86,3 @@ The Profile Page is where users can manage their personal documents and profile 
 
 Users can download or view these documents at any time.
 
----
-
-Feel free to customize this as needed for your project! If you need any more help, just let me know.
