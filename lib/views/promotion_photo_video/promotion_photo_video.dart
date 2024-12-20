@@ -94,7 +94,7 @@ class PromotionPhotoVideo extends StatelessWidget {
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.grey
-                                    .withOpacity(0.5), // Shadow color
+                                    .withValues(alpha: .5), // Shadow color
                                 spreadRadius: 2, // Shadow spread
                                 blurRadius: 5, // Shadow blur
                                 offset: Offset(0, 3), // Position of shadow

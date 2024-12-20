@@ -1,5 +1,3 @@
-// gokul
-
 import 'package:flutter/material.dart';
 
 class TestimonialsScreen extends StatelessWidget {
