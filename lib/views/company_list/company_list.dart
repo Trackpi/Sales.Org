@@ -7,8 +7,10 @@ class CompanyList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
+      //appbar
       appBar: AppBar(
         backgroundColor: Colors.black,
+        //back button
         leading: Icon(
           Icons.arrow_back,
           color: Colors.white,
@@ -20,6 +22,7 @@ class CompanyList extends StatelessWidget {
           style: TextStyle(
               color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
         ),
+        //notifications icon
         actions: [
           Icon(
             Icons.notifications_outlined,
@@ -35,6 +38,7 @@ class CompanyList extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            //search bar
             Container(
               padding: EdgeInsets.symmetric(horizontal: 15, vertical: 9),
               child: Row(
@@ -54,6 +58,7 @@ class CompanyList extends StatelessWidget {
                         fontWeight: FontWeight.normal),
                   ),
                   Spacer(),
+                  //voice search
                   Icon(
                     Icons.mic,
                     color: Colors.white,
@@ -77,6 +82,7 @@ class CompanyList extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
+            //list of companies
             Expanded(
               child: GridView.builder(
                 itemCount: 15,
@@ -100,6 +106,7 @@ class CompanyList extends StatelessWidget {
                           alignment: Alignment.topRight,
                           height: 112,
                           width: 178,
+                          //save button
                           child: Icon(
                             Icons.bookmark_outline,
                             color: Color(0xFFFCB205),
