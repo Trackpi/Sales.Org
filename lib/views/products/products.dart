@@ -119,7 +119,7 @@ class Products extends StatelessWidget {
                                 image: DecorationImage(
                                     fit: BoxFit.cover,
                                     image:
-                                    AssetImage("assets/images/company.png"))),
+                                    AssetImage("assets/png/image.png"))),
                           ),
                           SizedBox(
                             height: 8,
