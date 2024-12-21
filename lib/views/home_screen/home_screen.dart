@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:sales_org/routes/app_routes.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -202,15 +203,17 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Container(
-                                  height: 112,
-                                  width: 178,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(5),
-                                      image: DecorationImage(
-                                          fit: BoxFit.cover,
-                                          image: AssetImage(
-                                              "assets/png/company.png"))),
+                                Expanded(
+                                  child: Container(
+                                    height: 112,
+                                    width: 178,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(5),
+                                        image: DecorationImage(
+                                            fit: BoxFit.cover,
+                                            image: AssetImage(
+                                                "assets/png/company.png"))),
+                                  ),
                                 ),
                                 SizedBox(
                                   height: 8,
@@ -244,19 +247,24 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: 15,
                       ),
                       Center(
-                        child: Container(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-                          child: Text(
-                            "View more",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 14,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, AppRoutes.companyList);
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 10, vertical: 8),
+                            child: Text(
+                              "View more",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                              ),
                             ),
+                            decoration: BoxDecoration(
+                                color: Color(0xFFFFB300),
+                                borderRadius: BorderRadius.circular(5)),
                           ),
-                          decoration: BoxDecoration(
-                              color: Color(0xFFFFB300),
-                              borderRadius: BorderRadius.circular(5)),
                         ),
                       ),
                       SizedBox(

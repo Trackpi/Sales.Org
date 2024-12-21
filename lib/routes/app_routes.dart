@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sales_org/views/bottom_navbar/bottom_navbar.dart';
+import 'package:sales_org/views/company_list/company_list.dart';
+import 'package:sales_org/views/company_profile/company_profile.dart';
+import 'package:sales_org/views/home_screen/home_screen.dart';
 import 'package:sales_org/views/login_screen/login_screen.dart';
 import 'package:sales_org/views/splash_screen/splash_screen.dart';
 
@@ -8,6 +12,9 @@ class AppRoutes {
   /// The route name for the splash screen.
   static const String splashScreen = '/';
   static const String loginScreen = '/LoginScreen';
+  static const String companyProfile = '/CompanyProfile';
+  static const String companyList = '/CompanyList';
+  static const String homeScreen = '/HomeScreen';
 
   /// Generates the appropriate route based on the given [settings].
   ///
@@ -29,6 +36,18 @@ class AppRoutes {
       case loginScreen:
         // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const LoginScreen());
+
+      case homeScreen:
+        // Return a MaterialPageRoute that loads the LoginScreen widget
+        return MaterialPageRoute(builder: (_) => const BottomNavbar());
+
+      case companyProfile:
+        // Return a MaterialPageRoute that loads the LoginScreen widget
+        return MaterialPageRoute(builder: (_) => const CompanyProfile());
+
+      case companyList:
+        // Return a MaterialPageRoute that loads the LoginScreen widget
+        return MaterialPageRoute(builder: (_) => const CompanyList());
 
       // Default case when no matching route is found
       default:

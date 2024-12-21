@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sales_org/gen/assets.gen.dart';
+import 'package:sales_org/routes/app_routes.dart';
 
 class CompanyList extends StatelessWidget {
   const CompanyList({super.key});
@@ -10,12 +12,7 @@ class CompanyList extends StatelessWidget {
       //appbar
       appBar: AppBar(
         backgroundColor: Colors.black,
-        //back button
-        leading: Icon(
-          Icons.arrow_back,
-          color: Colors.white,
-          size: 25,
-        ),
+
         centerTitle: true,
         title: Text(
           "Companies",
@@ -94,55 +91,63 @@ class CompanyList extends StatelessWidget {
                     mainAxisExtent: 180,
                     mainAxisSpacing: 10),
                 itemBuilder: (context, index) {
-                  return Container(
-                    padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                    height: 170,
-                    width: 171,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          padding: EdgeInsets.only(right: 5, top: 5),
-                          alignment: Alignment.topRight,
-                          height: 112,
-                          width: 178,
-                          //save button
-                          child: Icon(
-                            Icons.bookmark_outline,
-                            color: Color(0xFFFCB205),
-                          ),
-                          decoration: BoxDecoration(
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, AppRoutes.companyProfile);
+                    },
+                    child: Container(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                      height: 170,
+                      width: 171,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.only(right: 5, top: 5),
+                            alignment: Alignment.topRight,
+                            height: 112,
+                            width: 178,
+                            //save button
+                            child: Icon(
+                              Icons.bookmark_outline,
+                              color: Color(0xFFFCB205),
+                            ),
+                            decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5),
                               image: DecorationImage(
                                   fit: BoxFit.cover,
-                                  image:
-                                      AssetImage("assets/images/company.png"))),
-                        ),
-                        SizedBox(
-                          height: 8,
-                        ),
-                        Text(
-                          "Company Name",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 16),
-                        ),
-                        SizedBox(
-                          height: 8,
-                        ),
-                        Text(
-                          "Type of company",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 12),
-                        )
-                      ],
+                                  image: AssetImage(
+                                    Assets.png.company.path,
+                                  )),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                          Text(
+                            "Company Name",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.normal,
+                                fontSize: 16),
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                          Text(
+                            "Type of company",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.normal,
+                                fontSize: 12),
+                          )
+                        ],
+                      ),
+                      decoration: BoxDecoration(
+                          color: Color(0xFF2A2A2A),
+                          borderRadius: BorderRadius.circular(10)),
                     ),
-                    decoration: BoxDecoration(
-                        color: Color(0xFF2A2A2A),
-                        borderRadius: BorderRadius.circular(10)),
                   );
                 },
               ),

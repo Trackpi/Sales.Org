@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sales_org/gen/assets.gen.dart';
+import 'package:sales_org/routes/app_routes.dart';
 import 'package:sales_org/views/bottom_navbar/bottom_navbar.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -174,11 +175,7 @@ class LoginScreen extends StatelessWidget {
                 //login button
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => BottomNavbar(),
-                        ));
+                    Navigator.pushNamed(context, AppRoutes.homeScreen);
                   },
                   child: Container(
                     alignment: Alignment.center,
