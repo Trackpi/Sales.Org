@@ -82,7 +82,8 @@ class Search extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            Container(height: 180,
+            Container(
+              height: 180,
               child: Expanded(
                 child: GridView.builder(
                   scrollDirection: Axis.horizontal,
@@ -96,7 +97,8 @@ class Search extends StatelessWidget {
                       mainAxisSpacing: 10),
                   itemBuilder: (context, index) {
                     return Container(
-                      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                      padding:
+                          EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                       height: 170,
                       width: 171,
                       child: Column(
@@ -117,7 +119,7 @@ class Search extends StatelessWidget {
                                 image: DecorationImage(
                                     fit: BoxFit.cover,
                                     image:
-                                    AssetImage("assets/png/company.png"))),
+                                        AssetImage("assets/png/company.png"))),
                           ),
                           SizedBox(
                             height: 8,
@@ -149,7 +151,9 @@ class Search extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             Text(
               "Our Products",
               style: TextStyle(
@@ -160,7 +164,8 @@ class Search extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            Container(height: 180,
+            Container(
+              height: 180,
               child: Expanded(
                 child: GridView.builder(
                   scrollDirection: Axis.horizontal,
@@ -174,7 +179,8 @@ class Search extends StatelessWidget {
                       mainAxisSpacing: 10),
                   itemBuilder: (context, index) {
                     return Container(
-                      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                      padding:
+                          EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                       height: 170,
                       width: 171,
                       child: Column(
@@ -194,8 +200,7 @@ class Search extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(5),
                                 image: DecorationImage(
                                     fit: BoxFit.cover,
-                                    image:
-                                    AssetImage("assets/png/image.png"))),
+                                    image: AssetImage("assets/png/image.png"))),
                           ),
                           SizedBox(
                             height: 8,
@@ -227,10 +232,9 @@ class Search extends StatelessWidget {
                 ),
               ),
             ),
-
           ],
         ),
       ),
-    );;
+    );
   }
 }
