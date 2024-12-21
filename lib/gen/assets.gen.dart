@@ -28,11 +28,14 @@ class $AssetsPngGen {
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
+  /// File path: assets/svg/searching_data.svg
+  String get searchingData => 'assets/svg/searching_data.svg';
+
   /// File path: assets/svg/trackpi_logo.svg
   String get trackpiLogo => 'assets/svg/trackpi_logo.svg';
 
   /// List of all assets
-  List<String> get values => [trackpiLogo];
+  List<String> get values => [searchingData, trackpiLogo];
 }
 
 class Assets {
