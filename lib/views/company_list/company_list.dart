@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sales_org/gen/assets.gen.dart';
 import 'package:sales_org/routes/app_routes.dart';
+import 'package:sales_org/utils/size_utils.dart';
 
 class CompanyList extends StatelessWidget {
   const CompanyList({super.key});
@@ -12,7 +13,10 @@ class CompanyList extends StatelessWidget {
       //appbar
       appBar: AppBar(
         backgroundColor: Colors.black,
-
+        leading: Icon(
+          Icons.arrow_back,
+          color: Colors.white,
+        ),
         centerTitle: true,
         title: Text(
           "Companies",
@@ -31,40 +35,38 @@ class CompanyList extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        padding: EdgeInsets.symmetric(
+            horizontal: SizeUtils.width * 0.04,
+            vertical: SizeUtils.height * 0.01),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //search bar
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 9),
-              child: Row(
-                children: [
-                  Icon(
+            SizedBox(
+              height: 40,
+              child: TextFormField(
+                cursorColor: Color(0xffffffff),
+                decoration: InputDecoration(
+                  fillColor: Color(0xff2A2A2A),
+                  filled: true,
+                  prefixIcon: Icon(
                     Icons.search,
-                    color: Colors.grey,
+                    color: Color(0xffffffff).withAlpha(50),
                   ),
-                  SizedBox(
-                    width: 10,
+                  hintText: "Search",
+                  hintStyle: TextStyle(
+                    height: 0,
+                    color: Color(0xffffffff).withAlpha(50),
                   ),
-                  Text(
-                    "Search",
-                    style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal),
-                  ),
-                  Spacer(),
-                  //voice search
-                  Icon(
+                  suffixIcon: Icon(
                     Icons.mic,
-                    color: Colors.white,
-                  )
-                ],
+                    color: Color(0xffffffff),
+                  ),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide.none),
+                ),
               ),
-              decoration: BoxDecoration(
-                  color: Color(0xFF2A2A2A),
-                  borderRadius: BorderRadius.circular(30)),
             ),
             SizedBox(
               height: 20,
@@ -88,7 +90,7 @@ class CompanyList extends StatelessWidget {
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 10,
-                    mainAxisExtent: 180,
+                    mainAxisExtent: 190,
                     mainAxisSpacing: 10),
                 itemBuilder: (context, index) {
                   return GestureDetector(
@@ -96,18 +98,18 @@ class CompanyList extends StatelessWidget {
                       Navigator.pushNamed(context, AppRoutes.companyProfile);
                     },
                     child: Container(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                      height: 170,
-                      width: 171,
+                      padding: EdgeInsets.symmetric(
+                          vertical: SizeUtils.height * 0.01,
+                          horizontal: SizeUtils.width * 0.02),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            padding: EdgeInsets.only(right: 5, top: 5),
+                            padding: EdgeInsets.only(
+                                right: SizeUtils.width * 0.01,
+                                top: SizeUtils.height * 0.005),
                             alignment: Alignment.topRight,
-                            height: 112,
-                            width: 178,
+                            height: SizeUtils.height * 0.13,
                             //save button
                             child: Icon(
                               Icons.bookmark_outline,

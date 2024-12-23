@@ -1,5 +1,6 @@
 //for arjun
 import 'package:flutter/material.dart';
+import 'package:sales_org/utils/size_utils.dart';
 
 class RecentSearchScreen extends StatefulWidget {
   const RecentSearchScreen({super.key});
@@ -58,7 +59,9 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+        padding: EdgeInsets.symmetric(
+            horizontal: SizeUtils.width * 0.04,
+            vertical: SizeUtils.height * 0.01),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -76,7 +79,9 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
             ),
             //search bar
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 9),
+              padding: EdgeInsets.symmetric(
+                  horizontal: SizeUtils.width * 0.03,
+                  vertical: SizeUtils.height * 0.01),
               child: Row(
                 children: [
                   Icon(
@@ -149,8 +154,8 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
                               physics: NeverScrollableScrollPhysics(),
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 10),
+                                  padding: EdgeInsets.symmetric(
+                                      vertical: SizeUtils.height * 0.013),
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -243,8 +248,8 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
                               physics: ScrollPhysics(),
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 10),
+                                  padding: EdgeInsets.symmetric(
+                                      vertical: SizeUtils.height * 0.013),
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,

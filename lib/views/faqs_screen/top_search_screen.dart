@@ -1,5 +1,6 @@
 //for aparna
 import 'package:flutter/material.dart';
+import 'package:sales_org/utils/size_utils.dart';
 
 class TopSearchScreen extends StatelessWidget {
   const TopSearchScreen({super.key});
@@ -27,24 +28,20 @@ class TopSearchScreen extends StatelessWidget {
           Icon(
             Icons.star_outline_rounded,
             color: Color(0xffffffff),
-            size: 24,
           ),
           SizedBox(
             width: 20,
           )
         ],
       ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 15,
-          ),
-          //column with padding containing searchfield , top search heading ...
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 20,
-            ),
-            child: Column(
+      body: Padding(
+        padding: EdgeInsets.symmetric(
+            horizontal: SizeUtils.width * 0.04,
+            vertical: SizeUtils.height * 0.01),
+        child: Column(
+          children: [
+            //column with padding containing searchfield , top search heading ...
+            Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
@@ -102,69 +99,69 @@ class TopSearchScreen extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          //top searched list
-          Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Divider(
-                    color: Color(0xffffffff).withAlpha(75),
-                  ),
-                  ListView.separated(
-                      shrinkWrap: true,
-                      physics: NeverScrollableScrollPhysics(),
-                      itemBuilder: (context, index) => Padding(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 15, horizontal: 20),
-                            child: Row(
-                              children: [
-                                Icon(
-                                  Icons.saved_search_outlined,
-                                  size: 20,
-                                  color: Color(0xffffffff),
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Expanded(
-                                  child: Text(
-                                    "How to add a payment method by this app?",
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(
-                                        color: Color(0xffffffff),
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 15,
-                                ),
-                                Icon(
-                                  index == 0
-                                      ? Icons.star_rounded
-                                      : Icons.star_outline_rounded,
-                                  size: 20,
-                                  color: Color(0xffFFB300),
-                                )
-                              ],
-                            ),
-                          ),
-                      separatorBuilder: (context, index) => Divider(
-                            color: Color(0xffffffff).withAlpha(75),
-                          ),
-                      itemCount: 15),
-                  Divider(
-                    color: Color(0xffffffff).withAlpha(75),
-                  ),
-                ],
-              ),
+            SizedBox(
+              height: 10,
             ),
-          )
-        ],
+            //top searched list
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Divider(
+                      color: Color(0xffffffff).withAlpha(75),
+                    ),
+                    ListView.separated(
+                        shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
+                        itemBuilder: (context, index) => Padding(
+                              padding: EdgeInsets.symmetric(
+                                  vertical: SizeUtils.height * 0.013),
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    Icons.saved_search_outlined,
+                                    color: Color(0xffffffff),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Expanded(
+                                    child: Text(
+                                      "How to add a payment method by this app?",
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                          color: Color(0xffffffff),
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 15,
+                                  ),
+                                  Icon(
+                                    index == 0
+                                        ? Icons.star_rounded
+                                        : Icons.star_outline_rounded,
+                                    color: index == 0
+                                        ? Color(0xffFFB300)
+                                        : Colors.white,
+                                  )
+                                ],
+                              ),
+                            ),
+                        separatorBuilder: (context, index) => Divider(
+                              color: Color(0xffffffff).withAlpha(75),
+                            ),
+                        itemCount: 15),
+                    Divider(
+                      color: Color(0xffffffff).withAlpha(75),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

@@ -1,6 +1,7 @@
 //for gokul
 
 import 'package:flutter/material.dart';
+import 'package:sales_org/utils/size_utils.dart';
 
 class FaqSavedScreen extends StatelessWidget {
   const FaqSavedScreen({super.key});
@@ -10,119 +11,154 @@ class FaqSavedScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.black,
+        backgroundColor: Color(0xff0a0a0a),
         leading: Icon(
           Icons.arrow_back,
-          color: Colors.white,
-          size: 30,
+          color: Color(0xffffffff),
+          size: 24,
         ),
+        centerTitle: true,
         title: Text(
-          'FAQs',
+          "FAQs",
           style: TextStyle(
-            color: Colors.white,
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
+              color: Color(0xffffffff),
+              fontSize: 18,
+              fontWeight: FontWeight.bold),
         ),
         actions: [
           Icon(
-            Icons.star,
-            size: 30,
-            color: Colors.orange,
+            Icons.star_rounded,
+            color: Color(0xffFFB300),
           ),
+          SizedBox(
+            width: 20,
+          )
         ],
       ),
-      body: Column(
-        children: [
-          SizedBox(height: 15),
-          Center(
-            child: Text(
-              'How can we help you?',
-              style: TextStyle(color: Colors.white, fontSize: 20),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.grey[800],
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: TextField(
-                style: TextStyle(color: Colors.white),
-                decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.search, color: Colors.white),
-                  suffixIcon: Icon(Icons.mic, color: Colors.white),
-                  hintText: 'Search',
-                  hintStyle: TextStyle(color: Colors.grey),
-                  border: InputBorder.none,
+      body: Padding(
+        padding: EdgeInsets.symmetric(
+            horizontal: SizeUtils.width * 0.04,
+            vertical: SizeUtils.height * 0.01),
+        child: Column(
+          children: [
+            //column with padding
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "How can we help you?",
+                  style: TextStyle(
+                      color: Color(0xffffffff),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600),
                 ),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'Saved FAQs',
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: 15,
-              itemBuilder: (context, index) {
-                return Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 20.0),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.history,
-                            color: Colors.white,
-                            size: 26,
-                          ),
-                          SizedBox(width: 20),
-                          Expanded(
-                            child: Text(
-                              'How to add a payment method by this app?',
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                              ),
-                            ),
-                          ),
-                          SizedBox(width: 10),
-                          Icon(Icons.star, color: Colors.orange),
-                        ],
+                SizedBox(
+                  height: 15,
+                ),
+                //search field
+                SizedBox(
+                  height: 40,
+                  child: TextFormField(
+                    cursorColor: Color(0xffffffff),
+                    decoration: InputDecoration(
+                      fillColor: Color(0xff2A2A2A),
+                      filled: true,
+                      prefixIcon: Icon(
+                        Icons.search,
+                        color: Color(0xffffffff).withAlpha(50),
                       ),
+                      hintText: "Search",
+                      hintStyle: TextStyle(
+                        height: 0,
+                        color: Color(0xffffffff).withAlpha(50),
+                      ),
+                      suffixIcon: Icon(
+                        Icons.mic,
+                        color: Color(0xffffffff),
+                      ),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: BorderSide.none),
                     ),
-                    Divider(
-                      color: Colors.white.withAlpha(90),
-                      thickness: .9,
-                      indent: 20,
-                      endIndent: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                //heading saved faqs
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Saved FAQs",
+                      style: TextStyle(
+                          color: Color(0xffffffff),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500),
                     ),
                   ],
-                );
-              },
+                ),
+              ],
             ),
-          ),
-        ],
+            SizedBox(
+              height: 10,
+            ),
+            //saved faqs list
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Divider(
+                      color: Color(0xffffffff).withAlpha(75),
+                    ),
+                    ListView.separated(
+                        shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
+                        itemBuilder: (context, index) => Padding(
+                              padding: EdgeInsets.symmetric(
+                                  vertical: SizeUtils.height * 0.013),
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    Icons.history,
+                                    color: Color(0xffffffff),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Expanded(
+                                    child: Text(
+                                      "How to add a payment method by this app?",
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                          color: Color(0xffffffff),
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 15,
+                                  ),
+                                  Icon(
+                                    Icons.star_rounded,
+                                    color: Color(0xffFFB300),
+                                  )
+                                ],
+                              ),
+                            ),
+                        separatorBuilder: (context, index) => Divider(
+                              color: Color(0xffffffff).withAlpha(75),
+                            ),
+                        itemCount: 15),
+                    Divider(
+                      color: Color(0xffffffff).withAlpha(75),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
