@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sales_org/utils/size_utils.dart';
 
 class TestimonialsScreen extends StatelessWidget {
   const TestimonialsScreen({super.key});
@@ -60,7 +61,9 @@ class TestimonialsScreen extends StatelessWidget {
         body: TabBarView(
           children: [
             GridView.builder(
-              padding: EdgeInsets.all(16),
+              padding: EdgeInsets.symmetric(
+                  vertical: SizeUtils.height * 0.03,
+                  horizontal: SizeUtils.width * 0.03),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 1,
                 crossAxisSpacing: 16,
@@ -77,10 +80,10 @@ class TestimonialsScreen extends StatelessWidget {
                       height: 193,
                       decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(15),
                       ),
                       child: Image.network(
-                        'https://wallpapers.com/images/file/bright-white-background-0jefakp13qzfppzf.jpg',
+                        'https://images.pexels.com/photos/103123/pexels-photo-103123.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -124,7 +127,9 @@ class TestimonialsScreen extends StatelessWidget {
               },
             ),
             GridView.builder(
-              padding: EdgeInsets.all(16),
+              padding: EdgeInsets.symmetric(
+                  vertical: SizeUtils.height * 0.03,
+                  horizontal: SizeUtils.width * 0.03),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 1,
                 crossAxisSpacing: 16,
