@@ -82,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Container(
                       padding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                          EdgeInsets.symmetric(horizontal: SizeUtils.width*.05, vertical:SizeUtils.width*.04),
                       decoration: BoxDecoration(
                           border: Border.all(color: Color(0xFFFFB300)),
                           color: Color(
@@ -148,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     Container(
                       padding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+                          EdgeInsets.symmetric(horizontal: SizeUtils.width*.05, vertical:SizeUtils.width*.04),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -183,14 +183,15 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontWeight: FontWeight.bold,
                           fontSize: 18),
                     ),
-                    SizedBox(
-                      height: 15,
-                    ),
+                    // SizedBox(
+                    //   height: 15,
+                    // ),
                     GridView.builder(
                       itemCount: 4,
                       physics: NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        childAspectRatio: 1,
                           crossAxisCount: 2,
                           crossAxisSpacing: 10,
                           // mainAxisExtent: 200,
@@ -199,15 +200,15 @@ class _HomeScreenState extends State<HomeScreen> {
                         return Container(
                           padding:
                               EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                          height: 170,
-                          width: 171,
+                          // height: SizeUtils.height*0.,
+                          // width: 171,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Expanded(
                                 child: Container(
-                                  height: 112,
-                                  width: 178,
+                                  height: SizeUtils.height*0.34,
+                                 // width: 178,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(5),
                                       image: DecorationImage(
@@ -276,8 +277,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         4,
                         (index) {
                           return Container(
-                            height: 226,
-                            width: 380,
+                            // height: 226,
+                             width: SizeUtils.width*0.9,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
                                     fit: BoxFit.fill,
@@ -290,7 +291,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       carouselController: _controller,
                       options: CarouselOptions(
                           autoPlay: true,
-                          aspectRatio: 2.0,
+                          aspectRatio: 2,
                           viewportFraction: 1.0,
                           onPageChanged: (index, reason) {
                             setState(() {

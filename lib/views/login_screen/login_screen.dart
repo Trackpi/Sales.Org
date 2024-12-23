@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sales_org/gen/assets.gen.dart';
 import 'package:sales_org/routes/app_routes.dart';
+import 'package:sales_org/utils/size_utils.dart';
 import 'package:sales_org/views/bottom_navbar/bottom_navbar.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -8,12 +9,14 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.black,
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: SizeUtils.width*.05),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -34,7 +37,7 @@ class LoginScreen extends StatelessWidget {
                 //Company logo
                 Image.asset(
                   Assets.png.logo.path,
-                  height: 96,
+                  height: SizeUtils.height*0.14,
                 ),
                 SizedBox(
                   height: 5,
@@ -103,7 +106,7 @@ class LoginScreen extends StatelessWidget {
                           builder: (context) {
                             return AlertDialog(
                               content: Container(
-                                width: 340,
+                                width: SizeUtils.width*.8,
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
@@ -205,8 +208,8 @@ class LoginScreen extends StatelessWidget {
                       "Don't have an account?",
                       style: TextStyle(
                         color: Color(0xFFFFFFFF),
-                        fontWeight: FontWeight.normal,
-                        fontSize: 18,
+                       // fontWeight: FontWeight.normal,
+                        fontSize: 15,
                       ),
                     ),
                     SizedBox(
