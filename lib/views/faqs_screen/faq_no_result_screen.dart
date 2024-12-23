@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sales_org/gen/assets.gen.dart';
+import 'package:sales_org/utils/size_utils.dart';
 
 class FaqNoResultScreen extends StatelessWidget {
   const FaqNoResultScreen({super.key});
@@ -34,7 +35,9 @@ class FaqNoResultScreen extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+        padding: EdgeInsets.symmetric(
+            vertical: SizeUtils.height * 0.01,
+            horizontal: SizeUtils.width * 0.04),
         child: Column(
           children: [
             Center(
@@ -51,7 +54,9 @@ class FaqNoResultScreen extends StatelessWidget {
             ),
             //search bar
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 9),
+              padding: EdgeInsets.symmetric(
+                  horizontal: SizeUtils.width * 0.05,
+                  vertical: SizeUtils.height * 0.01),
               child: Row(
                 children: [
                   Icon(
@@ -102,25 +107,32 @@ class FaqNoResultScreen extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 13),
-              decoration: BoxDecoration(
-                  color: Color(0xFF2A2A2A),
-                  borderRadius: BorderRadius.circular(8)),
-              child: Row(
-                children: [
-                  Text(
-                    "Enter your question",
-                    style: TextStyle(color: Colors.grey, fontSize: 12),
-                  ),
-                ],
+            TextFormField(
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: Color(0xFF2A2A2A),
+                hintText: "Enter your question",
+                hintStyle: TextStyle(color: Colors.grey, fontSize: 12),
+                contentPadding:
+                    EdgeInsets.symmetric(horizontal: 10, vertical: 13),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(color: Colors.grey),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(color: Colors.grey),
+                ),
               ),
             ),
+        
             SizedBox(
               height: 30,
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 58, vertical: 8),
+              padding: EdgeInsets.symmetric(
+                  horizontal: SizeUtils.width * 0.1,
+                  vertical: SizeUtils.height * 0.01),
               decoration: BoxDecoration(
                   // color: Color(0xFF2A2A2A),
                   gradient: LinearGradient(colors: [
