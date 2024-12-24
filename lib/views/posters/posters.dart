@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:sales_org/utils/size_utils.dart';
 
 class Posters extends StatelessWidget {
   const Posters({super.key});
@@ -41,7 +41,9 @@ class Posters extends StatelessWidget {
         ],
       ),
       body: GridView.builder(
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 23),
+        padding: EdgeInsets.symmetric(
+            vertical: SizeUtils.height * 0.03,
+            horizontal: SizeUtils.width * 0.03),
         itemCount: 10,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
@@ -51,14 +53,13 @@ class Posters extends StatelessWidget {
         itemBuilder: (context, index) => Stack(
           children: [
             Container(
-              height: 210,
+              height: SizeUtils.height * 0.25,
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
-                      image: AssetImage(
-                        "assets/images/posters_image.jpg",
-                      ),
+                      image: NetworkImage(
+                          'https://wallpapers.com/images/file/bright-white-background-0jefakp13qzfppzf.jpg'),
                       fit: BoxFit.cover)),
             ),
             //bookmark
@@ -81,7 +82,7 @@ class Posters extends StatelessWidget {
                     "10K",
                     style: TextStyle(
                         color: Color(0xffFFB300),
-                        fontSize: 8,
+                        fontSize: 14,
                         fontWeight: FontWeight.w600),
                   ),
                   SizedBox(

@@ -21,12 +21,22 @@ class $AssetsPngGen {
   /// File path: assets/png/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/png/logo.png');
 
+  /// File path: assets/png/no result found.png
+  AssetGenImage get noResultFound =>
+      const AssetGenImage('assets/png/no result found.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [company, image, logo];
+  List<AssetGenImage> get values => [company, image, logo, noResultFound];
 }
 
 class $AssetsSvgGen {
   const $AssetsSvgGen();
+
+  /// File path: assets/svg/amico.svg
+  String get amico => 'assets/svg/amico.svg';
+
+  /// File path: assets/svg/noresult.svg
+  String get noresult => 'assets/svg/noresult.svg';
 
   /// File path: assets/svg/searching_data.svg
   String get searchingData => 'assets/svg/searching_data.svg';
@@ -35,7 +45,7 @@ class $AssetsSvgGen {
   String get trackpiLogo => 'assets/svg/trackpi_logo.svg';
 
   /// List of all assets
-  List<String> get values => [searchingData, trackpiLogo];
+  List<String> get values => [amico, noresult, searchingData, trackpiLogo];
 }
 
 class Assets {
