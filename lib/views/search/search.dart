@@ -69,6 +69,31 @@ class Search extends StatelessWidget {
                   color: Color(0xFF2A2A2A),
                   borderRadius: BorderRadius.circular(30)),
             ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: List.generate(
+                  6, // Creates 6 filter containers
+                      (index) => Container(
+                    margin: EdgeInsets.all(7) ,
+                    padding: EdgeInsets.all(7),
+                    decoration: BoxDecoration(
+                      color: const Color(0xff2A2A2A), // Background color
+                      borderRadius: BorderRadius.circular(10), // Rounded edges
+                    ),
+                    height: 32, // Height of the filter container
+                    width: 70, // Width of the filter container
+                    child: Center(
+                      child: Text(
+                        "Product", // Text inside each filter container
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
             SizedBox(
               height: 20,
             ),
@@ -82,6 +107,7 @@ class Search extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
+            //list of companies
             Container(
               height: 180,
               child: Expanded(
@@ -98,7 +124,7 @@ class Search extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Container(
                       padding:
-                          EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                      EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                       height: 170,
                       width: 171,
                       child: Column(
@@ -119,7 +145,7 @@ class Search extends StatelessWidget {
                                 image: DecorationImage(
                                     fit: BoxFit.cover,
                                     image:
-                                        AssetImage("assets/png/company.png"))),
+                                    AssetImage("assets/png/company.png"))),
                           ),
                           SizedBox(
                             height: 8,
@@ -164,6 +190,7 @@ class Search extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
+            //list of products
             Container(
               height: 180,
               child: Expanded(
@@ -180,7 +207,7 @@ class Search extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Container(
                       padding:
-                          EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                      EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                       height: 170,
                       width: 171,
                       child: Column(
