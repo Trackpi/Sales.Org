@@ -25,7 +25,7 @@ class Search extends StatelessWidget {
 //faq icon
         actions: [
           Icon(
-            Icons.menu,
+            Icons.filter_list,
             color: Colors.white,
           ),
           SizedBox(
