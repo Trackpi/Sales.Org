@@ -2,26 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:sales_org/gen/assets.gen.dart';
 import 'package:sales_org/routes/app_routes.dart';
 import 'package:sales_org/utils/size_utils.dart';
-import 'package:sales_org/views/bottom_navbar/bottom_navbar.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-
-
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.black,
         body: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: SizeUtils.width*.05),
+            padding: EdgeInsets.symmetric(horizontal: SizeUtils.width * .05),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: 45,
+                  height: SizeUtils.height * 0.06,
                 ),
                 Text(
                   "Login",
@@ -32,15 +29,15 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: SizeUtils.height * 0.04,
                 ),
                 //Company logo
                 Image.asset(
                   Assets.png.logo.path,
-                  height: SizeUtils.height*0.14,
+                  height: SizeUtils.height * 0.14,
                 ),
                 SizedBox(
-                  height: 5,
+                  height: SizeUtils.height * 0.02,
                 ),
                 Text(
                   "Your Strategic Growth Partner",
@@ -51,7 +48,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 73,
+                  height: SizeUtils.height * 0.07,
                 ),
                 //two textfields
                 TextFormField(
@@ -70,7 +67,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 15,
+                  height: SizeUtils.height * 0.02,
                 ),
                 TextFormField(
                   obscureText: true,
@@ -93,7 +90,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 15,
+                  height: SizeUtils.height * 0.02,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -106,7 +103,7 @@ class LoginScreen extends StatelessWidget {
                           builder: (context) {
                             return AlertDialog(
                               content: Container(
-                                width: SizeUtils.width*.8,
+                                width: SizeUtils.width * .8,
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
@@ -119,7 +116,7 @@ class LoginScreen extends StatelessWidget {
                                       ),
                                     ),
                                     SizedBox(
-                                      height: 16,
+                                      height: SizeUtils.height * 0.02,
                                     ),
                                     Text(
                                       textAlign: TextAlign.center,
@@ -131,7 +128,7 @@ class LoginScreen extends StatelessWidget {
                                       ),
                                     ),
                                     SizedBox(
-                                      height: 16,
+                                      height: SizeUtils.height * 0.02,
                                     ),
                                     Divider(
                                       thickness: 2,
@@ -173,7 +170,7 @@ class LoginScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 30,
+                  height: SizeUtils.height * 0.05,
                 ),
                 //login button
                 GestureDetector(
@@ -198,7 +195,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 198,
+                  height: SizeUtils.height * 0.28,
                 ),
                 //navigate to register screen
                 Row(
@@ -208,12 +205,12 @@ class LoginScreen extends StatelessWidget {
                       "Don't have an account?",
                       style: TextStyle(
                         color: Color(0xFFFFFFFF),
-                       // fontWeight: FontWeight.normal,
+                        // fontWeight: FontWeight.normal,
                         fontSize: 15,
                       ),
                     ),
                     SizedBox(
-                      width: 5,
+                      width: SizeUtils.width * 0.01,
                     ),
                     Text(
                       "Register",
@@ -226,7 +223,7 @@ class LoginScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 59,
+                  height: SizeUtils.height * 0.07,
                 )
               ],
             ),

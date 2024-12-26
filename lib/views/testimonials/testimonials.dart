@@ -32,7 +32,7 @@ class TestimonialsScreen extends StatelessWidget {
               size: 30,
               color: Colors.white,
             ),
-            SizedBox(width: 15),
+            SizedBox(width: SizeUtils.width * 0.05),
             Icon(
               Icons.search,
               size: 30,
@@ -190,7 +190,7 @@ class TestimonialsScreen extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(width: 4),
+                          SizedBox(width: SizeUtils.width * 0.01),
                           Icon(
                             Icons.remove_red_eye,
                             color: Colors.orange,
