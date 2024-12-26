@@ -27,7 +27,8 @@ class CompanyList extends StatelessWidget {
             color: Colors.white,
           ),
           SizedBox(
-            width: 25,
+            // width: 25,
+            width: SizeUtils.width * 0.045,
           )
         ],
       ),
@@ -40,7 +41,9 @@ class CompanyList extends StatelessWidget {
           children: [
             //search bar
             SizedBox(
-              height: 40,
+              // height: 40,
+              height: SizeUtils.height * 0.06,
+
               child: TextFormField(
                 cursorColor: Color(0xffffffff),
                 decoration: InputDecoration(
@@ -66,7 +69,8 @@ class CompanyList extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 20,
+              // height: 20,
+              height: SizeUtils.height * 0.03,
             ),
             Text(
               "Choose Company",
@@ -76,7 +80,8 @@ class CompanyList extends StatelessWidget {
                   fontSize: 18),
             ),
             SizedBox(
-              height: 15,
+              // height: 15,
+              height: SizeUtils.height * 0.02,
             ),
             //list of companies
             Expanded(
@@ -124,7 +129,8 @@ class CompanyList extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            height: 8,
+                            // height: 8,
+                            height: SizeUtils.height * 0.008,
                           ),
                           Text(
                             "Company Name",

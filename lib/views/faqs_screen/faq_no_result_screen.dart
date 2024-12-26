@@ -30,7 +30,8 @@ class FaqNoResultScreen extends StatelessWidget {
             color: Colors.white,
           ),
           SizedBox(
-            width: 25,
+            // width: 25,
+            width: SizeUtils.width * 0.05,
           )
         ],
       ),
@@ -50,7 +51,8 @@ class FaqNoResultScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 15,
+              // height: 15,
+              height: SizeUtils.height * 0.02,
             ),
             //search bar
             Container(
@@ -64,7 +66,8 @@ class FaqNoResultScreen extends StatelessWidget {
                     color: Colors.grey,
                   ),
                   SizedBox(
-                    width: 10,
+                    // width: 10,
+                    width: SizeUtils.width * 0.015,
                   ),
                   Text(
                     "Search",
@@ -86,7 +89,8 @@ class FaqNoResultScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(30)),
             ),
             SizedBox(
-              height: 27,
+              // height: 27,
+              height: SizeUtils.height * 0.05,
             ),
             SvgPicture.asset(
               Assets.svg.searchingData,
@@ -98,14 +102,16 @@ class FaqNoResultScreen extends StatelessWidget {
               style: TextStyle(color: Color(0xFFFCB205), fontSize: 24),
             ),
             SizedBox(
-              height: 5,
+              // height: 5,
+              height: SizeUtils.height * 0.005,
             ),
             Text(
               "Would you like to submit your Question to us ?",
               style: TextStyle(color: Color(0xFFFCB205), fontSize: 14),
             ),
             SizedBox(
-              height: 10,
+              // height: 10,
+              height: SizeUtils.height * 0.01,
             ),
             TextFormField(
               decoration: InputDecoration(
@@ -125,9 +131,10 @@ class FaqNoResultScreen extends StatelessWidget {
                 ),
               ),
             ),
-        
+
             SizedBox(
-              height: 30,
+              // height: 30,
+              height: SizeUtils.height * 0.04,
             ),
             Container(
               padding: EdgeInsets.symmetric(

@@ -54,7 +54,8 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
             color: Colors.white,
           ),
           SizedBox(
-            width: 25,
+            // width: 25,
+            width: SizeUtils.width * 0.04,
           )
         ],
       ),
@@ -75,7 +76,8 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
               ),
             ),
             SizedBox(
-              height: 15,
+              // height: 15,
+              height: SizeUtils.height * 0.02,
             ),
             //search bar
             Container(
@@ -89,7 +91,7 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
                     color: Colors.grey,
                   ),
                   SizedBox(
-                    width: 10,
+                    width: SizeUtils.width * 0.02,
                   ),
                   Text(
                     "Search",
@@ -111,7 +113,8 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
                   borderRadius: BorderRadius.circular(30)),
             ),
             SizedBox(
-              height: 20,
+              // height: 20,
+              height: SizeUtils.height * 0.03,
             ),
             //recent searches
 
@@ -140,7 +143,8 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
                       ],
                     ),
                     SizedBox(
-                      height: 10,
+                      // height: 10,
+                      height: SizeUtils.height * 0.01,
                     ),
                     SingleChildScrollView(
                       child: Column(
@@ -165,7 +169,8 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
                                         color: Colors.grey,
                                       ),
                                       SizedBox(
-                                        width: 5,
+                                        // width: 5,
+                                        width: SizeUtils.width * 0.02,
                                       ),
                                       Expanded(
                                         child: Text(
@@ -178,7 +183,8 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
                                         ),
                                       ),
                                       SizedBox(
-                                        width: 10,
+                                        // width: 10,
+                                        width: SizeUtils.width * 0.02,
                                       ),
                                       Icon(
                                         Icons.star_outline,
@@ -202,7 +208,8 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
                       ),
                     ),
                     SizedBox(
-                      height: 10,
+                      // height: 10,
+                      height: SizeUtils.height * 0.01,
                     ),
 
                     //view all button expands to show all recent searches
@@ -223,7 +230,8 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
                       ),
                     ),
                     SizedBox(
-                      height: 30,
+                      // height: 30,
+                      height: SizeUtils.height * 0.04,
                     ),
                     //top searches
                     Text(
@@ -234,7 +242,8 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
                           fontSize: 18),
                     ),
                     SizedBox(
-                      height: 10,
+                      // height: 10,
+                      height: SizeUtils.height * 0.01,
                     ),
                     SingleChildScrollView(
                       child: Column(
@@ -259,7 +268,8 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
                                         color: Colors.grey,
                                       ),
                                       SizedBox(
-                                        width: 5,
+                                        // width: 5,
+                                        width: SizeUtils.width * 0.02,
                                       ),
                                       Expanded(
                                         child: Text(
@@ -272,7 +282,8 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
                                         ),
                                       ),
                                       SizedBox(
-                                        width: 10,
+                                        // width: 10,
+                                        width: SizeUtils.width * 0.02,
                                       ),
                                       Icon(
                                         Icons.star_outline,

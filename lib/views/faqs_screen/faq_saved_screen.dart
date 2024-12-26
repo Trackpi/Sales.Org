@@ -31,7 +31,8 @@ class FaqSavedScreen extends StatelessWidget {
             color: Color(0xffFFB300),
           ),
           SizedBox(
-            width: 20,
+            // width: 20,
+            width: SizeUtils.width * 0.04,
           )
         ],
       ),
@@ -53,11 +54,14 @@ class FaqSavedScreen extends StatelessWidget {
                       fontWeight: FontWeight.w600),
                 ),
                 SizedBox(
-                  height: 15,
+                  // height: 15,
+                  height: SizeUtils.height * 0.03,
                 ),
                 //search field
                 SizedBox(
-                  height: 40,
+                  // height: 40,
+                  height: SizeUtils.height * 0.06,
+
                   child: TextFormField(
                     cursorColor: Color(0xffffffff),
                     decoration: InputDecoration(
@@ -69,7 +73,7 @@ class FaqSavedScreen extends StatelessWidget {
                       ),
                       hintText: "Search",
                       hintStyle: TextStyle(
-                        height: 0,
+                        height: 1.3,
                         color: Color(0xffffffff).withAlpha(50),
                       ),
                       suffixIcon: Icon(
@@ -83,7 +87,8 @@ class FaqSavedScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  // height: 20,
+                  height: SizeUtils.height * 0.03,
                 ),
                 //heading saved faqs
                 Row(
@@ -101,7 +106,8 @@ class FaqSavedScreen extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 10,
+              // height: 10,
+              height: SizeUtils.height * 0.01,
             ),
             //saved faqs list
             Expanded(
@@ -124,7 +130,7 @@ class FaqSavedScreen extends StatelessWidget {
                                     color: Color(0xffffffff),
                                   ),
                                   SizedBox(
-                                    width: 10,
+                                    width: SizeUtils.width * 0.02,
                                   ),
                                   Expanded(
                                     child: Text(
@@ -137,7 +143,8 @@ class FaqSavedScreen extends StatelessWidget {
                                     ),
                                   ),
                                   SizedBox(
-                                    width: 15,
+                                    // width: 15,
+                                    width: SizeUtils.width * 0.03,
                                   ),
                                   Icon(
                                     Icons.star_rounded,

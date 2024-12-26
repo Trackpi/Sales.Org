@@ -30,7 +30,8 @@ class TopSearchScreen extends StatelessWidget {
             color: Color(0xffffffff),
           ),
           SizedBox(
-            width: 20,
+            // width: 20,
+            width: SizeUtils.width * 0.04,
           )
         ],
       ),
@@ -52,11 +53,14 @@ class TopSearchScreen extends StatelessWidget {
                       fontWeight: FontWeight.w600),
                 ),
                 SizedBox(
-                  height: 15,
+                  // height: 15,
+                  height: SizeUtils.height * 0.02,
                 ),
                 //search field
                 SizedBox(
-                  height: 40,
+                  // height: 40,
+                  height: SizeUtils.height * 0.06,
+
                   child: TextFormField(
                     cursorColor: Color(0xffffffff),
                     decoration: InputDecoration(
@@ -82,7 +86,8 @@ class TopSearchScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  // height: 20,
+                  height: SizeUtils.height * 0.03,
                 ),
                 //heading top searches
                 Row(
@@ -100,7 +105,8 @@ class TopSearchScreen extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 10,
+              // height: 10,
+              height: SizeUtils.height * 0.01,
             ),
             //top searched list
             Expanded(
@@ -123,7 +129,8 @@ class TopSearchScreen extends StatelessWidget {
                                     color: Color(0xffffffff),
                                   ),
                                   SizedBox(
-                                    width: 10,
+                                    // width: 10,
+                                    width: SizeUtils.width * 0.02,
                                   ),
                                   Expanded(
                                     child: Text(
@@ -136,7 +143,8 @@ class TopSearchScreen extends StatelessWidget {
                                     ),
                                   ),
                                   SizedBox(
-                                    width: 15,
+                                    // width: 15,
+                                    width: SizeUtils.width * 0.03,
                                   ),
                                   Icon(
                                     index == 0

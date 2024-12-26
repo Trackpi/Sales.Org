@@ -1,6 +1,7 @@
 //for aparna
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sales_org/utils/size_utils.dart';
 
 class FaqNoSavedScreen extends StatelessWidget {
   const FaqNoSavedScreen({super.key});
@@ -31,7 +32,8 @@ class FaqNoSavedScreen extends StatelessWidget {
             size: 24,
           ),
           SizedBox(
-            width: 20,
+            // width: 20,
+            width: SizeUtils.width * 0.04,
           )
         ],
       ),
@@ -41,7 +43,8 @@ class FaqNoSavedScreen extends StatelessWidget {
           children: [
             SvgPicture.asset("assets/svg/amico.svg"),
             SizedBox(
-              height: 50,
+              // height: 50,
+              height: SizeUtils.height * 0.05,
             ),
             Text(
               "No Saved FAQs",

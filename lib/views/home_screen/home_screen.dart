@@ -32,7 +32,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       "https://t3.ftcdn.net/jpg/07/24/59/76/360_F_724597608_pmo5BsVumFcFyHJKlASG2Y2KpkkfiYUU.webp"),
                 ),
                 SizedBox(
-                  width: 10,
+                  // width: 10,
+                  width: SizeUtils.width * 0.02,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,7 +46,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontSize: 18),
                     ),
                     SizedBox(
-                      height: 5,
+                      // height: 5,
+                      height: SizeUtils.height * 0.005,
                     ),
                     Text(
                       "Chief Executive Officer",
@@ -63,7 +65,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   size: 24,
                 ),
                 SizedBox(
-                  width: 15,
+                  // width: 15,
+                  width: SizeUtils.width * 0.03,
                 ),
                 Icon(
                   Icons.notifications_outlined,
@@ -73,7 +76,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             SizedBox(
-              height: 20,
+              // height: 20,
+              height: SizeUtils.height * 0.03,
             ),
             Expanded(
               child: SingleChildScrollView(
@@ -81,8 +85,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: SizeUtils.width*.05, vertical:SizeUtils.width*.04),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: SizeUtils.width * .05,
+                          vertical: SizeUtils.width * .04),
                       decoration: BoxDecoration(
                           border: Border.all(color: Color(0xFFFFB300)),
                           color: Color(
@@ -118,7 +123,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             ],
                           ),
                           SizedBox(
-                            height: 10,
+                            // height: 10,
+                            height: SizeUtils.height * 0.01,
                           ),
                           Row(
                             children: [
@@ -144,11 +150,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      // height: 20,
+                      height: SizeUtils.height * 0.03,
                     ),
                     Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: SizeUtils.width*.05, vertical:SizeUtils.width*.04),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: SizeUtils.width * .05,
+                          vertical: SizeUtils.width * .04),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -174,7 +182,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           borderRadius: BorderRadius.circular(10)),
                     ),
                     SizedBox(
-                      height: 20,
+                      // height: 20,
+                      height: SizeUtils.height * 0.03,
                     ),
                     Text(
                       "Choose Company",
@@ -183,15 +192,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontWeight: FontWeight.bold,
                           fontSize: 18),
                     ),
-                    // SizedBox(
-                    //   height: 15,
-                    // ),
+                    SizedBox(
+                      // height: 15,
+                      height: SizeUtils.height * 0.02,
+                    ),
                     GridView.builder(
                       itemCount: 4,
                       physics: NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        childAspectRatio: 1,
+                          childAspectRatio: 1,
                           crossAxisCount: 2,
                           crossAxisSpacing: 10,
                           // mainAxisExtent: 200,
@@ -207,8 +217,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: [
                               Expanded(
                                 child: Container(
-                                  height: SizeUtils.height*0.34,
-                                 // width: 178,
+                                  height: SizeUtils.height * 0.34,
+                                  // width: 178,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(5),
                                       image: DecorationImage(
@@ -218,7 +228,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ),
                               SizedBox(
-                                height: 8,
+                                // height: 8,
+                                height: SizeUtils.height * 0.008,
                               ),
                               Text(
                                 "Company Name",
@@ -228,7 +239,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                     fontSize: 18),
                               ),
                               SizedBox(
-                                height: 8,
+                                // height: 8,
+                                height: SizeUtils.height * 0.008,
                               ),
                               Text(
                                 "Type of company",
@@ -246,7 +258,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       },
                     ),
                     SizedBox(
-                      height: 15,
+                      // height: 15,
+                      height: SizeUtils.height * 0.02,
                     ),
                     Center(
                       child: GestureDetector(
@@ -270,7 +283,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      // height: 20,
+                      height: SizeUtils.height * 0.03,
                     ),
                     CarouselSlider(
                       items: List.generate(
@@ -278,7 +292,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         (index) {
                           return Container(
                             // height: 226,
-                             width: SizeUtils.width*0.9,
+                            width: SizeUtils.width * 0.9,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
                                     fit: BoxFit.fill,
@@ -300,7 +314,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           }),
                     ),
                     SizedBox(
-                      height: 15,
+                      // height: 15,
+                      height: SizeUtils.height * 0.02,
                     ),
                     Center(
                       child: AnimatedSmoothIndicator(
