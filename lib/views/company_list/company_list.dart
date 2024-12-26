@@ -13,10 +13,7 @@ class CompanyList extends StatelessWidget {
       //appbar
       appBar: AppBar(
         backgroundColor: Colors.black,
-        leading: Icon(
-          Icons.arrow_back,
-          color: Colors.white,
-        ),
+
         centerTitle: true,
         title: Text(
           "Companies",
@@ -104,24 +101,26 @@ class CompanyList extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
-                            padding: EdgeInsets.only(
-                                right: SizeUtils.width * 0.01,
-                                top: SizeUtils.height * 0.005),
-                            alignment: Alignment.topRight,
-                            height: SizeUtils.height * 0.13,
-                            //save button
-                            child: Icon(
-                              Icons.bookmark_outline,
-                              color: Color(0xFFFCB205),
-                            ),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage(
-                                    Assets.png.company.path,
-                                  )),
+                          Expanded(
+                            child: Container(
+                              padding: EdgeInsets.only(
+                                  right: SizeUtils.width * 0.01,
+                                  top: SizeUtils.height * 0.005),
+                              alignment: Alignment.topRight,
+                              height: SizeUtils.height * 0.13,
+                              //save button
+                              child: Icon(
+                                Icons.bookmark_outline,
+                                color: Color(0xFFFCB205),
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(
+                                      Assets.png.company.path,
+                                    )),
+                              ),
                             ),
                           ),
                           SizedBox(
@@ -133,9 +132,6 @@ class CompanyList extends StatelessWidget {
                                 color: Colors.white,
                                 fontWeight: FontWeight.normal,
                                 fontSize: 16),
-                          ),
-                          SizedBox(
-                            height: 8,
                           ),
                           Text(
                             "Type of company",
