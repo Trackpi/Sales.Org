@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sales_org/utils/size_utils.dart';
+import 'package:sales_org/widgets/tab_card.dart';
 
 class Posters extends StatelessWidget {
   const Posters({super.key});
@@ -46,54 +47,10 @@ class Posters extends StatelessWidget {
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
             mainAxisExtent: 210),
-        itemBuilder: (context, index) => Stack(
-          children: [
-            Container(
-              height: SizeUtils.height * 0.25,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(
-                      image: NetworkImage(
-                          'https://wallpapers.com/images/file/bright-white-background-0jefakp13qzfppzf.jpg'),
-                      fit: BoxFit.cover)),
-            ),
-            //bookmark
-            Positioned(
-              right: 16,
-              top: 15,
-              child: Icon(
-                index == 0 ? Icons.bookmark : Icons.bookmark_outline,
-                size: 24,
-                color: Color(0xffFFB300),
-              ),
-            ),
-            //views count
-            Positioned(
-              bottom: 10,
-              right: 10,
-              child: Row(
-                children: [
-                  Text(
-                    "10K",
-                    style: TextStyle(
-                        color: Color(0xffFFB300),
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600),
-                  ),
-                  SizedBox(
-                    width: SizeUtils.width * 0.03,
-                  ),
-                  Icon(
-                    Icons.visibility_outlined,
-                    color: Color(0xffFFB300),
-                    size: 13,
-                  )
-                ],
-              ),
-            )
-          ],
-        ),
+        itemBuilder: (context, index) => TabCard(
+            image:
+                "https://media.licdn.com/dms/image/v2/D560BAQEDGA0mgxzP2g/company-logo_200_200/company-logo_200_200/0/1726567177130/trackpi_private_limited_logo?e=2147483647&v=beta&t=i11jD7Z7tqj9Qwr59_97UddJcghokMqZNp3PPtLwd4g",
+            count: "10K"),
       ),
     );
   }
