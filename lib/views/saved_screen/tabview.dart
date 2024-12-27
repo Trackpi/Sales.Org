@@ -22,7 +22,7 @@ class TabView extends StatelessWidget {
             indicatorSize: TabBarIndicatorSize.label ,
             indicator: BoxDecoration(
                 color: Colors.orange,
-                borderRadius: BorderRadius.all(Radius.circular(5))
+                borderRadius: BorderRadius.all(Radius.circular(6))
 
             ),
             unselectedLabelColor: Colors.white,
