@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sales_org/gen/assets.gen.dart';
 import 'package:sales_org/routes/app_routes.dart';
 import 'package:sales_org/utils/size_utils.dart';
+import 'package:sales_org/widgets/grid_cards.dart';
 
 class CompanyList extends StatelessWidget {
   const CompanyList({super.key});
@@ -42,7 +43,7 @@ class CompanyList extends StatelessWidget {
             //search bar
             SizedBox(
               // height: 40,
-              height: SizeUtils.height * 0.06,
+              height: SizeUtils.height * 0.05,
 
               child: TextFormField(
                 cursorColor: Color(0xffffffff),
@@ -99,59 +100,12 @@ class CompanyList extends StatelessWidget {
                     onTap: () {
                       Navigator.pushNamed(context, AppRoutes.companyProfile);
                     },
-                    child: Container(
-                      padding: EdgeInsets.symmetric(
-                          vertical: SizeUtils.height * 0.01,
-                          horizontal: SizeUtils.width * 0.02),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: Container(
-                              padding: EdgeInsets.only(
-                                  right: SizeUtils.width * 0.01,
-                                  top: SizeUtils.height * 0.005),
-                              alignment: Alignment.topRight,
-                              height: SizeUtils.height * 0.13,
-                              //save button
-                              child: Icon(
-                                Icons.bookmark_outline,
-                                color: Color(0xFFFCB205),
-                              ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage(
-                                      Assets.png.company.path,
-                                    )),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            // height: 8,
-                            height: SizeUtils.height * 0.008,
-                          ),
-                          Text(
-                            "Company Name",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 16),
-                          ),
-                          Text(
-                            "Type of company",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 12),
-                          )
-                        ],
-                      ),
-                      decoration: BoxDecoration(
-                          color: Color(0xFF2A2A2A),
-                          borderRadius: BorderRadius.circular(10)),
-                    ),
+                    //custom widegt
+                    child: GridCards(
+                        needSavebutton: true,
+                        title: "Company Name",
+                        url: Assets.png.company.path,
+                        subtitle: "Type of Company"),
                   );
                 },
               ),

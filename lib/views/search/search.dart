@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sales_org/gen/assets.gen.dart';
 import 'package:sales_org/utils/size_utils.dart';
+import 'package:sales_org/widgets/grid_cards.dart';
 
 class Search extends StatelessWidget {
   const Search({super.key});
@@ -120,59 +121,11 @@ class Search extends StatelessWidget {
                       mainAxisExtent: 180,
                       mainAxisSpacing: 10),
                   itemBuilder: (context, index) {
-                    return Container(
-                      padding: EdgeInsets.symmetric(
-                          vertical: SizeUtils.height * 0.01,
-                          horizontal: SizeUtils.width * 0.02),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            padding: EdgeInsets.only(
-                                right: SizeUtils.width * 0.01,
-                                top: SizeUtils.height * 0.005),
-                            alignment: Alignment.topRight,
-                            height: SizeUtils.height * 0.13,
-                            //save button
-                            child: Icon(
-                              Icons.bookmark_outline,
-                              color: Color(0xFFFCB205),
-                            ),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage(
-                                    Assets.png.company.path,
-                                  )),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            "Company Name",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 16),
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            "Type of company",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 12),
-                          )
-                        ],
-                      ),
-                      decoration: BoxDecoration(
-                          color: Color(0xFF2A2A2A),
-                          borderRadius: BorderRadius.circular(10)),
-                    );
+                    return GridCards(
+                        title: "Company Name",
+                        needSavebutton: true,
+                        url: Assets.png.company.path,
+                        subtitle: "Type of Company");
                   },
                 ),
               ),
@@ -203,59 +156,11 @@ class Search extends StatelessWidget {
                       mainAxisExtent: 180,
                       mainAxisSpacing: 10),
                   itemBuilder: (context, index) {
-                    return Container(
-                      padding: EdgeInsets.symmetric(
-                          vertical: SizeUtils.height * 0.01,
-                          horizontal: SizeUtils.width * 0.02),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            padding: EdgeInsets.only(
-                                right: SizeUtils.width * 0.01,
-                                top: SizeUtils.height * 0.005),
-                            alignment: Alignment.topRight,
-                            height: SizeUtils.height * 0.13,
-                            //save button
-                            child: Icon(
-                              Icons.bookmark_outline,
-                              color: Color(0xFFFCB205),
-                            ),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage(
-                                    Assets.png.image.path,
-                                  )),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            "Product Name",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 14),
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            "Price : 0000",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 12),
-                          )
-                        ],
-                      ),
-                      decoration: BoxDecoration(
-                          color: Color(0xFF2A2A2A),
-                          borderRadius: BorderRadius.circular(10)),
-                    );
+                    return GridCards(
+                        needSavebutton: true,
+                        title: "Product Name",
+                        url: Assets.png.image.path,
+                        subtitle: "Price: 0000");
                   },
                 ),
               ),

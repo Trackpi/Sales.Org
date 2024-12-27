@@ -1,6 +1,9 @@
 // for abhijith ps
 import 'package:flutter/material.dart';
+import 'package:sales_org/gen/assets.gen.dart';
+import 'package:sales_org/routes/app_routes.dart';
 import 'package:sales_org/utils/size_utils.dart';
+import 'package:sales_org/widgets/grid_cards.dart';
 
 class Products extends StatelessWidget {
   const Products({super.key});
@@ -94,59 +97,15 @@ class Products extends StatelessWidget {
                     mainAxisExtent: 180,
                     mainAxisSpacing: 10),
                 itemBuilder: (context, index) {
-                  return Container(
-                    padding: EdgeInsets.symmetric(
-                        vertical: SizeUtils.height * 0.005,
-                        horizontal: SizeUtils.height * 0.01),
-                    height: 170,
-                    width: 171,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          padding: EdgeInsets.only(
-                              right: SizeUtils.height * 0.005,
-                              top: SizeUtils.height * 0.005),
-                          alignment: Alignment.topRight,
-                          height: 112,
-                          width: 178,
-//favourite button
-                          child: Icon(
-                            Icons.bookmark_outline,
-                            color: Color(0xFFFCB205),
-                          ),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image:
-                                      AssetImage("assets/images/company.png"))),
-                        ),
-                        SizedBox(
-                          height: SizeUtils.height * 0.01,
-                        ),
-                        Text(
-                          "Product Name",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 16),
-                        ),
-                        SizedBox(
-                          height: SizeUtils.height * 0.01,
-                        ),
-                        Text(
-                          "price: 0000",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 12),
-                        )
-                      ],
-                    ),
-                    decoration: BoxDecoration(
-                        color: Color(0xFF2A2A2A),
-                        borderRadius: BorderRadius.circular(10)),
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, AppRoutes.productsProfile);
+                    },
+                    child: GridCards(
+                        needSavebutton: true,
+                        title: "Product Name",
+                        url: Assets.png.image.path,
+                        subtitle: "Price: 0000"),
                   );
                 },
               ),

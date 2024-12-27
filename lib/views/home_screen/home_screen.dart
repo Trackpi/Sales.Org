@@ -1,7 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:sales_org/gen/assets.gen.dart';
 import 'package:sales_org/routes/app_routes.dart';
 import 'package:sales_org/utils/size_utils.dart';
+import 'package:sales_org/widgets/grid_cards.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -222,54 +224,12 @@ class _HomeScreenState extends State<HomeScreen> {
                             Navigator.pushNamed(
                                 context, AppRoutes.companyProfile);
                           },
-                          child: Container(
-                            padding: EdgeInsets.symmetric(
-                                vertical: 5, horizontal: 10),
-                            // height: SizeUtils.height*0.,
-                            // width: 171,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Expanded(
-                                  child: Container(
-                                    height: SizeUtils.height * 0.34,
-                                    // width: 178,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(5),
-                                        image: DecorationImage(
-                                            fit: BoxFit.cover,
-                                            image: AssetImage(
-                                                "assets/png/company.png"))),
-                                  ),
-                                ),
-                                SizedBox(
-                                  // height: 8,
-                                  height: SizeUtils.height * 0.008,
-                                ),
-                                Text(
-                                  "Company Name",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.normal,
-                                      fontSize: 18),
-                                ),
-                                SizedBox(
-                                  // height: 8,
-                                  height: SizeUtils.height * 0.008,
-                                ),
-                                Text(
-                                  "Type of company",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.normal,
-                                      fontSize: 12),
-                                )
-                              ],
-                            ),
-                            decoration: BoxDecoration(
-                                color: Color(0xFF2A2A2A),
-                                borderRadius: BorderRadius.circular(10)),
-                          ),
+                          //custom widget
+
+                          child: GridCards(
+                              title: "Company Name",
+                              url: Assets.png.company.path,
+                              subtitle: "Type of Company"),
                         );
                       },
                     ),
