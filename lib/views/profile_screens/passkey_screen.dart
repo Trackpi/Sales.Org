@@ -12,10 +12,6 @@ class PasskeyScreen extends StatelessWidget {
       //appbar
       appBar: AppBar(
         backgroundColor: Colors.black,
-        leading: Icon(
-          Icons.arrow_back,
-          color: Colors.white,
-        ),
         centerTitle: true,
         title: Text(
           "Passkey",

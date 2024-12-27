@@ -10,10 +10,6 @@ class Posters extends StatelessWidget {
       backgroundColor: Color(0xff0A0A0A),
       appBar: AppBar(
         backgroundColor: Color(0xff0A0A0A),
-        leading: Icon(
-          Icons.arrow_back,
-          color: Color(0xffffffff),
-        ),
         centerTitle: true,
         title: Text(
           "Posters",

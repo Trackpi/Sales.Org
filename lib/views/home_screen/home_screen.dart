@@ -26,10 +26,15 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Row(
               children: [
-                CircleAvatar(
-                  radius: 25,
-                  backgroundImage: NetworkImage(
-                      "https://t3.ftcdn.net/jpg/07/24/59/76/360_F_724597608_pmo5BsVumFcFyHJKlASG2Y2KpkkfiYUU.webp"),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, AppRoutes.profileScreen);
+                  },
+                  child: CircleAvatar(
+                    radius: 25,
+                    backgroundImage: NetworkImage(
+                        "https://t3.ftcdn.net/jpg/07/24/59/76/360_F_724597608_pmo5BsVumFcFyHJKlASG2Y2KpkkfiYUU.webp"),
+                  ),
                 ),
                 SizedBox(
                   // width: 10,
@@ -59,10 +64,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
                 Spacer(),
-                Icon(
-                  Icons.search,
-                  color: Colors.white,
-                  size: 24,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, AppRoutes.homeSearch);
+                  },
+                  child: Icon(
+                    Icons.search,
+                    color: Colors.white,
+                    size: 24,
+                  ),
                 ),
                 SizedBox(
                   // width: 15,
@@ -207,53 +217,59 @@ class _HomeScreenState extends State<HomeScreen> {
                           // mainAxisExtent: 200,
                           mainAxisSpacing: 10),
                       itemBuilder: (context, index) {
-                        return Container(
-                          padding:
-                              EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                          // height: SizeUtils.height*0.,
-                          // width: 171,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Expanded(
-                                child: Container(
-                                  height: SizeUtils.height * 0.34,
-                                  // width: 178,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(5),
-                                      image: DecorationImage(
-                                          fit: BoxFit.cover,
-                                          image: AssetImage(
-                                              "assets/png/company.png"))),
+                        return InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(
+                                context, AppRoutes.companyProfile);
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 5, horizontal: 10),
+                            // height: SizeUtils.height*0.,
+                            // width: 171,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    height: SizeUtils.height * 0.34,
+                                    // width: 178,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(5),
+                                        image: DecorationImage(
+                                            fit: BoxFit.cover,
+                                            image: AssetImage(
+                                                "assets/png/company.png"))),
+                                  ),
                                 ),
-                              ),
-                              SizedBox(
-                                // height: 8,
-                                height: SizeUtils.height * 0.008,
-                              ),
-                              Text(
-                                "Company Name",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 18),
-                              ),
-                              SizedBox(
-                                // height: 8,
-                                height: SizeUtils.height * 0.008,
-                              ),
-                              Text(
-                                "Type of company",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 12),
-                              )
-                            ],
+                                SizedBox(
+                                  // height: 8,
+                                  height: SizeUtils.height * 0.008,
+                                ),
+                                Text(
+                                  "Company Name",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 18),
+                                ),
+                                SizedBox(
+                                  // height: 8,
+                                  height: SizeUtils.height * 0.008,
+                                ),
+                                Text(
+                                  "Type of company",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 12),
+                                )
+                              ],
+                            ),
+                            decoration: BoxDecoration(
+                                color: Color(0xFF2A2A2A),
+                                borderRadius: BorderRadius.circular(10)),
                           ),
-                          decoration: BoxDecoration(
-                              color: Color(0xFF2A2A2A),
-                              borderRadius: BorderRadius.circular(10)),
                         );
                       },
                     ),

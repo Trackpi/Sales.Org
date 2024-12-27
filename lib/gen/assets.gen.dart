@@ -44,8 +44,12 @@ class $AssetsSvgGen {
   /// File path: assets/svg/trackpi_logo.svg
   String get trackpiLogo => 'assets/svg/trackpi_logo.svg';
 
+  /// File path: assets/svg/trackpilogo.svg
+  String get trackpilogo => 'assets/svg/trackpilogo.svg';
+
   /// List of all assets
-  List<String> get values => [amico, noresult, searchingData, trackpiLogo];
+  List<String> get values =>
+      [amico, noresult, searchingData, trackpiLogo, trackpilogo];
 }
 
 class Assets {

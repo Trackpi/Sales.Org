@@ -16,13 +16,6 @@ class _ProfileDocumentScreenState extends State<ProfileDocumentScreen> {
     return Scaffold(
       backgroundColor: Colors.black, // Set background color to black
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {}, // Handle back button press
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.white,
-          ),
-        ),
         centerTitle: true, // Center the title in the app bar
         actions: [
           IconButton(

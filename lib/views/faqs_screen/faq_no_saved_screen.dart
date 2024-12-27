@@ -12,11 +12,6 @@ class FaqNoSavedScreen extends StatelessWidget {
       backgroundColor: Color(0xff0a0a0a),
       appBar: AppBar(
         backgroundColor: Color(0xff0a0a0a),
-        leading: Icon(
-          Icons.arrow_back,
-          color: Color(0xffffffff),
-          size: 24,
-        ),
         centerTitle: true,
         title: Text(
           "FAQs",

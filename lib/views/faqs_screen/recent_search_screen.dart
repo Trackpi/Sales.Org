@@ -1,5 +1,6 @@
 //for arjun
 import 'package:flutter/material.dart';
+import 'package:sales_org/routes/app_routes.dart';
 import 'package:sales_org/utils/size_utils.dart';
 
 class RecentSearchScreen extends StatefulWidget {
@@ -37,10 +38,7 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
       //appbar
       appBar: AppBar(
         backgroundColor: Colors.black,
-        leading: Icon(
-          Icons.arrow_back,
-          color: Colors.white,
-        ),
+        leading: Icon(null),
         centerTitle: true,
         title: Text(
           "FAQs",
@@ -49,9 +47,14 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
         ),
         //saved questions icon
         actions: [
-          Icon(
-            Icons.star_outline,
-            color: Colors.white,
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, AppRoutes.faqSaved);
+            },
+            child: Icon(
+              Icons.star_outline,
+              color: Colors.white,
+            ),
           ),
           SizedBox(
             // width: 25,
@@ -80,37 +83,42 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
               height: SizeUtils.height * 0.02,
             ),
             //search bar
-            Container(
-              padding: EdgeInsets.symmetric(
-                  horizontal: SizeUtils.width * 0.03,
-                  vertical: SizeUtils.height * 0.01),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.search,
-                    color: Colors.grey,
-                  ),
-                  SizedBox(
-                    width: SizeUtils.width * 0.02,
-                  ),
-                  Text(
-                    "Search",
-                    style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal),
-                  ),
-                  Spacer(),
-                  //voice search
-                  Icon(
-                    Icons.mic,
-                    color: Colors.white,
-                  )
-                ],
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, AppRoutes.faqSearch);
+              },
+              child: Container(
+                padding: EdgeInsets.symmetric(
+                    horizontal: SizeUtils.width * 0.03,
+                    vertical: SizeUtils.height * 0.01),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.search,
+                      color: Colors.grey,
+                    ),
+                    SizedBox(
+                      width: SizeUtils.width * 0.02,
+                    ),
+                    Text(
+                      "Search",
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 16,
+                          fontWeight: FontWeight.normal),
+                    ),
+                    Spacer(),
+                    //voice search
+                    Icon(
+                      Icons.mic,
+                      color: Colors.white,
+                    )
+                  ],
+                ),
+                decoration: BoxDecoration(
+                    color: Color(0xFF2A2A2A),
+                    borderRadius: BorderRadius.circular(30)),
               ),
-              decoration: BoxDecoration(
-                  color: Color(0xFF2A2A2A),
-                  borderRadius: BorderRadius.circular(30)),
             ),
             SizedBox(
               // height: 20,

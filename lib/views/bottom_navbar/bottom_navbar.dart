@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sales_org/views/faqs_screen/recent_search_screen.dart';
 import 'package:sales_org/views/home_screen/home_screen.dart';
+import 'package:sales_org/views/saved_screen/saved_screen.dart';
 
 class BottomNavbar extends StatefulWidget {
   const BottomNavbar({super.key});
@@ -15,12 +17,8 @@ class _BottomNavbarState extends State<BottomNavbar> {
     Container(
       color: Colors.green,
     ),
-    Container(
-      color: Colors.green,
-    ),
-    Container(
-      color: Colors.green,
-    ),
+    RecentSearchScreen(),
+    SavedScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -65,7 +63,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
                   size: 30,
                   Icons.bookmark_outline,
                 ),
-                label: "Downloads"),
+                label: "Saved"),
           ]),
     );
   }

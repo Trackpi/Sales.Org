@@ -11,12 +11,6 @@ class ProfilePersonalInfoscreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        leading: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.arrow_back,
-              color: Colors.white,
-            )),
         centerTitle: true,
         actions: [
           IconButton(

@@ -1,5 +1,6 @@
 //for aparna
 import 'package:flutter/material.dart';
+import 'package:sales_org/routes/app_routes.dart';
 import 'package:sales_org/utils/size_utils.dart';
 
 class TopSearchScreen extends StatelessWidget {
@@ -11,11 +12,6 @@ class TopSearchScreen extends StatelessWidget {
       backgroundColor: Color(0xff0a0a0a),
       appBar: AppBar(
         backgroundColor: Color(0xff0a0a0a),
-        leading: Icon(
-          Icons.arrow_back,
-          color: Color(0xffffffff),
-          size: 24,
-        ),
         centerTitle: true,
         title: Text(
           "FAQs",
@@ -25,9 +21,14 @@ class TopSearchScreen extends StatelessWidget {
               fontWeight: FontWeight.bold),
         ),
         actions: [
-          Icon(
-            Icons.star_outline_rounded,
-            color: Color(0xffffffff),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, AppRoutes.faqSaved);
+            },
+            child: Icon(
+              Icons.star_outline_rounded,
+              color: Color(0xffffffff),
+            ),
           ),
           SizedBox(
             // width: 20,
@@ -59,7 +60,7 @@ class TopSearchScreen extends StatelessWidget {
                 //search field
                 SizedBox(
                   // height: 40,
-                  height: SizeUtils.height * 0.06,
+                  height: SizeUtils.height * 0.05,
 
                   child: TextFormField(
                     cursorColor: Color(0xffffffff),

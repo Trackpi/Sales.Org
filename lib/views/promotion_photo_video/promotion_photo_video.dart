@@ -12,15 +12,6 @@ class PromotionPhotoVideo extends StatelessWidget {
         backgroundColor: Colors.black,
         appBar: AppBar(
           centerTitle: true,
-          leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context); // Navigate back to the previous screen
-            },
-            icon: Icon(
-              Icons.arrow_back,
-              color: Colors.white, // Icon color
-            ),
-          ),
           actions: [
             Row(
               children: [

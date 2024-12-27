@@ -13,11 +13,6 @@ class TestimonialsScreen extends StatelessWidget {
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: Colors.black,
-          leading: Icon(
-            Icons.arrow_back,
-            size: 30,
-            color: Colors.white,
-          ),
           title: Text(
             'Testimonials',
             style: TextStyle(
