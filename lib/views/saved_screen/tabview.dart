@@ -21,8 +21,8 @@ class TabView extends StatelessWidget {
           bottom: TabBar(
             indicatorSize: TabBarIndicatorSize.label ,
             indicator: BoxDecoration(
-                color: Colors.orange,
-                borderRadius: BorderRadius.all(Radius.circular(6))
+                color:Color(0xFFFCB205),
+                borderRadius: BorderRadius.all(Radius.circular(16))
 
             ),
             unselectedLabelColor: Colors.white,
@@ -34,7 +34,7 @@ class TabView extends StatelessWidget {
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                     // color: Colors.orange,
-                      borderRadius: BorderRadius.all(Radius.circular(8))
+                     // borderRadius: BorderRadius.all(Radius.circular(18))
                   ),
                   child: Text(
                     'Posters',
@@ -47,7 +47,7 @@ class TabView extends StatelessWidget {
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                     // color: Color(0xFFFCB205),
-                      borderRadius: BorderRadius.all(Radius.circular(8))
+                     // borderRadius: BorderRadius.all(Radius.circular(48))
                   ),
                   child: Text(
                     'Videos',

@@ -6,6 +6,28 @@ import 'package:sales_org/views/saved_screen/tabview.dart';
 import '../../gen/assets.gen.dart';
 import '../../utils/size_utils.dart';
 
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      // theme: AppTheme.darkTheme,
+      // onGenerateRoute: AppRoutes.generateRoute,
+      // initialRoute: AppRoutes.splashScreen,
+      debugShowCheckedModeBanner: false,
+      builder: (context, child) => Sizer(
+          builder: (context, Orientation orientation, DeviceType deviceType) {
+            return child ?? const SizedBox();
+          }),
+      home: SavedScreen(),
+    );
+  }
+}
 
 class SavedScreen extends StatelessWidget {
   const SavedScreen({Key? key}) : super(key: key);
@@ -255,77 +277,87 @@ class TView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: GridView.builder(
-        itemCount: 15,
-        physics: ScrollPhysics(),
-        shrinkWrap: true,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          childAspectRatio: 1,
-            crossAxisCount: 2,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10),
-        itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {},
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Color(0xFF2A2A2A),
-                  borderRadius: BorderRadius.circular(10)),
-              padding: EdgeInsets.symmetric(
-                  vertical: SizeUtils.height * 0.01,
-                  horizontal: SizeUtils.width * 0.02),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    padding: EdgeInsets.only(
-                        right: SizeUtils.width * 0.01,
-                        top: SizeUtils.height * 0.005),
-                    alignment: Alignment.topRight,
-                    height: SizeUtils.height * 0.2,
-                    //save button
-                    child: Icon(
-                      Icons.bookmark_outline,
-                      color: Color(0xFFFCB205),
-                    ),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage(
-                            Assets.png.company.path,
-                          )),
-                    ),
+    return Column(
+      children: [
+        SizedBox(
+          height: SizeUtils.height*0.01,
+        ),
+        Expanded(
+          child: GridView.builder(
+            padding: EdgeInsets.symmetric(
+                vertical: SizeUtils.height * 0.03,
+                horizontal: SizeUtils.width * 0.03),
+            itemCount: 15,
+            physics: ScrollPhysics(),
+            shrinkWrap: true,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              childAspectRatio: 1,
+                crossAxisCount: 2,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10),
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: () {},
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Color(0xFF2A2A2A),
+                      borderRadius: BorderRadius.circular(10)),
+                  padding: EdgeInsets.symmetric(
+                      vertical: SizeUtils.height * 0.01,
+                      horizontal: SizeUtils.width * 0.02),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(
+                            right: SizeUtils.width * 0.01,
+                            top: SizeUtils.height * 0.005),
+                        alignment: Alignment.topRight,
+                        height: SizeUtils.height * 0.2,
+                        //save button
+                        child: Icon(
+                          Icons.bookmark_outline,
+                          color: Color(0xFFFCB205),
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage(
+                                Assets.png.company.path,
+                              )),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        s,
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.normal,
+                            fontSize: 14),
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        t,
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.normal,
+                            fontSize: 12),
+                      )
+                    ],
                   ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  Text(
-                    s,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 14),
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  Text(
-                    t,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 12),
-                  )
-                ],
-              ),
 
-            ),
-          );
-        },
-      ),
+                ),
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 }
