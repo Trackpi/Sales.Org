@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sales_org/routes/app_routes.dart';
 import 'package:sales_org/theme/theme_data.dart';
 import 'package:sales_org/utils/size_utils.dart';
-import 'package:sales_org/views/splash_screen/splash_screen.dart';
+import 'package:sales_org/views/profile_screens/profile_document_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           builder: (context, Orientation orientation, DeviceType deviceType) {
         return child ?? const SizedBox();
       }),
-      home: SplashScreen(),
+      home: ProfileDocumentScreen(),
     );
   }
 }
