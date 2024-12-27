@@ -5,19 +5,7 @@ import 'package:sales_org/views/saved_screen/tabview.dart';
 
 import '../../gen/assets.gen.dart';
 import '../../utils/size_utils.dart';
-// void main(){
-//   runApp(MaterialApp(
-//     // theme: AppTheme.darkTheme,
-//     // onGenerateRoute: AppRoutes.generateRoute,
-//     // initialRoute: AppRoutes.splashScreen,
-//     debugShowCheckedModeBanner: false,
-//     builder: (context, child) => Sizer(
-//         builder: (context, Orientation orientation, DeviceType deviceType) {
-//           return child ?? const SizedBox();
-//         }),
-//     home: SavedScreen(),
-//   ));
-// }
+
 
 class SavedScreen extends StatelessWidget {
   const SavedScreen({Key? key}) : super(key: key);
