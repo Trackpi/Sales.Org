@@ -33,7 +33,7 @@ class Products extends StatelessWidget {
             color: Colors.white,
           ),
           SizedBox(
-            width: 25,
+            width: SizeUtils.width * 0.05,
           )
         ],
       ),
@@ -46,7 +46,7 @@ class Products extends StatelessWidget {
           children: [
 //search bar
             SizedBox(
-              height: 40,
+              height: SizeUtils.height * 0.06,
               child: TextFormField(
                 cursorColor: Color(0xffffffff),
                 decoration: InputDecoration(
@@ -72,7 +72,7 @@ class Products extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: SizeUtils.height * 0.035,
             ),
             Text(
               "Our Products",
@@ -82,7 +82,7 @@ class Products extends StatelessWidget {
                   fontSize: 18),
             ),
             SizedBox(
-              height: 15,
+              height: SizeUtils.height * 0.015,
             ),
 //list of products
             Expanded(
@@ -126,7 +126,7 @@ class Products extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            height: 8,
+                            height: SizeUtils.height * 0.018,
                           ),
                           Text(
                             "Product Name",
@@ -136,7 +136,7 @@ class Products extends StatelessWidget {
                                 fontSize: 14),
                           ),
                           SizedBox(
-                            height: 8,
+                            height: SizeUtils.height * 0.01,
                           ),
                           Text(
                             "Price : 0000",

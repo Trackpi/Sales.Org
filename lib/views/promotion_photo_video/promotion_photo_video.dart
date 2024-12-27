@@ -198,7 +198,7 @@ class PromotionPhotoVideo extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(width: 4),
+                          SizedBox(width: SizeUtils.width * 0.014),
                           Icon(
                             Icons.remove_red_eye,
                             color: Colors.orange,

@@ -28,7 +28,7 @@ class Posters extends StatelessWidget {
             color: Color(0xffffffff),
           ),
           SizedBox(
-            width: 10,
+            width: SizeUtils.width * 0.02,
           ),
           Icon(
             Icons.search,
@@ -36,7 +36,7 @@ class Posters extends StatelessWidget {
             size: 30,
           ),
           SizedBox(
-            width: 20,
+            width: SizeUtils.width * 0.025,
           )
         ],
       ),
@@ -86,7 +86,7 @@ class Posters extends StatelessWidget {
                         fontWeight: FontWeight.w600),
                   ),
                   SizedBox(
-                    width: 4,
+                    width: SizeUtils.width * 0.03,
                   ),
                   Icon(
                     Icons.visibility_outlined,
