@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sales_org/gen/assets.gen.dart';
 import 'package:sales_org/routes/app_routes.dart';
 import 'package:sales_org/utils/size_utils.dart';
+import 'package:sales_org/widgets/custom_textfield.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -50,44 +51,18 @@ class LoginScreen extends StatelessWidget {
                 SizedBox(
                   height: SizeUtils.height * 0.07,
                 ),
-                //two textfields
-                TextFormField(
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Color(0xFFFFFFFF),
-                    hintText: "Employer ID",
-                    hintStyle: TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                      fontWeight: FontWeight.normal,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
+                //two custom textfields
+                CustomTextfield(
+                  hintText: "Employee ID",
+                  isLoginPage: true,
                 ),
                 SizedBox(
                   height: SizeUtils.height * 0.02,
                 ),
-                TextFormField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Color(0xFFFFFFFF),
-                    hintText: "Password",
-                    suffixIcon: Icon(
-                      Icons.visibility_off_outlined,
-                      color: Colors.black,
-                    ),
-                    hintStyle: TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                      fontWeight: FontWeight.normal,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
+                CustomTextfield(
+                  hintText: "Password",
+                  isLoginPage: true,
+                  isPassword: true,
                 ),
                 SizedBox(
                   height: SizeUtils.height * 0.02,
@@ -195,7 +170,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: SizeUtils.height * 0.28,
+                  height: SizeUtils.height * 0.1,
                 ),
                 //navigate to register screen
                 Row(
@@ -205,7 +180,6 @@ class LoginScreen extends StatelessWidget {
                       "Don't have an account?",
                       style: TextStyle(
                         color: Color(0xFFFFFFFF),
-                        // fontWeight: FontWeight.normal,
                         fontSize: 15,
                       ),
                     ),
