@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:sales_org/routes/app_routes.dart';
 import 'package:sales_org/utils/size_utils.dart';
+import 'package:sales_org/widgets/list_tile.dart';
 
 class TopSearchScreen extends StatelessWidget {
   const TopSearchScreen({super.key});
@@ -120,44 +121,10 @@ class TopSearchScreen extends StatelessWidget {
                     ListView.separated(
                         shrinkWrap: true,
                         physics: NeverScrollableScrollPhysics(),
-                        itemBuilder: (context, index) => Padding(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: SizeUtils.height * 0.013),
-                              child: Row(
-                                children: [
-                                  Icon(
-                                    Icons.saved_search_outlined,
-                                    color: Color(0xffffffff),
-                                  ),
-                                  SizedBox(
-                                    // width: 10,
-                                    width: SizeUtils.width * 0.02,
-                                  ),
-                                  Expanded(
-                                    child: Text(
-                                      "How to add a payment method by this app?",
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
-                                          color: Color(0xffffffff),
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    // width: 15,
-                                    width: SizeUtils.width * 0.03,
-                                  ),
-                                  Icon(
-                                    index == 0
-                                        ? Icons.star_rounded
-                                        : Icons.star_outline_rounded,
-                                    color: index == 0
-                                        ? Color(0xffFFB300)
-                                        : Colors.white,
-                                  )
-                                ],
-                              ),
-                            ),
+                        itemBuilder: (context, index) => List_tile(
+                            leadingIcon: Icons.saved_search_outlined,
+                            text: "How to add a payment method by this app?",
+                            trailingIcon: Icons.star_outline),
                         separatorBuilder: (context, index) => Divider(
                               color: Color(0xffffffff).withAlpha(75),
                             ),

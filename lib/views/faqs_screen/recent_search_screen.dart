@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:sales_org/routes/app_routes.dart';
 import 'package:sales_org/utils/size_utils.dart';
+import 'package:sales_org/widgets/list_tile.dart';
 
 class RecentSearchScreen extends StatefulWidget {
   const RecentSearchScreen({super.key});
@@ -12,6 +13,7 @@ class RecentSearchScreen extends StatefulWidget {
 
 class _RecentSearchScreenState extends State<RecentSearchScreen> {
   bool isExpanded = false;
+
   @override
   Widget build(BuildContext context) {
     //dummy recent searches and top searches
@@ -263,44 +265,10 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
                           ListView.separated(
                               shrinkWrap: true,
                               physics: ScrollPhysics(),
-                              itemBuilder: (context, index) {
-                                return Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: SizeUtils.height * 0.013),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Icon(
-                                        Icons.saved_search,
-                                        color: Colors.grey,
-                                      ),
-                                      SizedBox(
-                                        // width: 5,
-                                        width: SizeUtils.width * 0.02,
-                                      ),
-                                      Expanded(
-                                        child: Text(
-                                          softWrap: true,
-                                          topsearch[index],
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 14),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        // width: 10,
-                                        width: SizeUtils.width * 0.02,
-                                      ),
-                                      Icon(
-                                        Icons.star_outline,
-                                        color: Colors.white,
-                                      ),
-                                    ],
-                                  ),
-                                );
-                              },
+                              itemBuilder: (context, index) => List_tile(
+                                  leadingIcon: Icons.saved_search,
+                                  text: topsearch[index],
+                                  trailingIcon: Icons.stars_outlined),
                               separatorBuilder: (context, index) => Divider(
                                     color: Colors.white.withAlpha(90),
                                     thickness: 1,
