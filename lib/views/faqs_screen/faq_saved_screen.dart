@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:sales_org/utils/size_utils.dart';
+import 'package:sales_org/widgets/list_tile.dart';
 
 class FaqSavedScreen extends StatelessWidget {
   const FaqSavedScreen({super.key});
@@ -120,39 +121,10 @@ class FaqSavedScreen extends StatelessWidget {
                     ListView.separated(
                         shrinkWrap: true,
                         physics: NeverScrollableScrollPhysics(),
-                        itemBuilder: (context, index) => Padding(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: SizeUtils.height * 0.013),
-                              child: Row(
-                                children: [
-                                  Icon(
-                                    Icons.history,
-                                    color: Color(0xffffffff),
-                                  ),
-                                  SizedBox(
-                                    width: SizeUtils.width * 0.02,
-                                  ),
-                                  Expanded(
-                                    child: Text(
-                                      "How to add a payment method by this app?",
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
-                                          color: Color(0xffffffff),
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    // width: 15,
-                                    width: SizeUtils.width * 0.03,
-                                  ),
-                                  Icon(
-                                    Icons.star_rounded,
-                                    color: Color(0xffFFB300),
-                                  )
-                                ],
-                              ),
-                            ),
+                        itemBuilder: (context, index) => List_tile(
+                            leadingIcon: Icons.history,
+                            text: "How to add a payment method by this app?",
+                            trailingIcon: Icons.star_rounded),
                         separatorBuilder: (context, index) => Divider(
                               color: Color(0xffffffff).withAlpha(75),
                             ),
