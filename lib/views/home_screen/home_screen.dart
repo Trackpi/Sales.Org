@@ -21,8 +21,10 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       body: Padding(
-        padding:
-            EdgeInsets.only(top: SizeUtils.height * 0.06, left: 10, right: 10),
+        padding: EdgeInsets.only(
+            top: SizeUtils.height * 0.06,
+            left: SizeUtils.width * 0.02,
+            right: SizeUtils.width * 0.02),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -243,8 +245,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.pushNamed(context, AppRoutes.companyList);
                         },
                         child: Container(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: SizeUtils.width * 0.02,
+                              vertical: SizeUtils.height * 0.008),
                           child: Text(
                             "View more",
                             style: TextStyle(

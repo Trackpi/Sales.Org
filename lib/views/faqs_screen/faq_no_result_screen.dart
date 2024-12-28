@@ -94,8 +94,9 @@ class FaqNoResultScreen extends StatelessWidget {
             ),
             SvgPicture.asset(
               Assets.svg.searchingData,
-              height: 348,
-              width: 393,
+              // height: 348,
+              height: SizeUtils.height * .48,
+              // width: 393,
             ),
             Text(
               "No Result Found",
@@ -119,8 +120,9 @@ class FaqNoResultScreen extends StatelessWidget {
                 fillColor: Color(0xFF2A2A2A),
                 hintText: "Enter your question",
                 hintStyle: TextStyle(color: Colors.grey, fontSize: 12),
-                contentPadding:
-                    EdgeInsets.symmetric(horizontal: 10, vertical: 13),
+                contentPadding: EdgeInsets.symmetric(
+                    horizontal: SizeUtils.width * 0.02,
+                    vertical: SizeUtils.height * 0.01),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
                   borderSide: BorderSide(color: Colors.grey),
