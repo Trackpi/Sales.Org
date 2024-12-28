@@ -1,4 +1,5 @@
 //for arjun
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:sales_org/routes/app_routes.dart';
 import 'package:sales_org/utils/size_utils.dart';
@@ -317,7 +318,60 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ],
               ),
               SizedBox(
-                height: SizeUtils.height * 0.09,
+                height: SizeUtils.height * 0.065,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    height: SizeUtils.height * 0.049,
+                    width: SizeUtils.width * 0.65,
+                    decoration: BoxDecoration(
+                        color: Color(0xFFFCB205),
+                        borderRadius: BorderRadius.circular(12)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.share,
+                          color: Colors.white,
+                        ),
+                        SizedBox(
+                          width: SizeUtils.width * 0.025,
+                        ),
+                        Text(
+                          'Share , Refer & Earn',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: SizeUtils.width * 0.048,
+                  ),
+                  DottedBorder(
+                    borderType: BorderType.RRect,
+                    radius: Radius.circular(12),
+                    dashPattern: [6, 3],
+                    color: Color(0xFFFCB205),
+                    strokeWidth: 2,
+                    child: Container(
+                      height: 35,
+                      width: 45,
+                      alignment: Alignment.center,
+                      child: Icon(
+                        Icons.copy,
+                        color: Color(0xFFFCB205),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: SizeUtils.height * 0.055,
               ),
               Center(
                 child: Container(
