@@ -10,13 +10,6 @@ class ResignationformScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black, // Sets the background color of the screen.
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {}, // Action when back button is pressed.
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.white, // White color for the back icon.
-          ),
-        ),
         centerTitle: true, // Centers the title in the AppBar.
         actions: [
           IconButton(
@@ -50,6 +43,7 @@ class ResignationformScreen extends StatelessWidget {
                 child: Text(
                   "Resignation Form",
                   style: TextStyle(
+                    fontWeight: FontWeight.bold,
                     color: Colors.white, // White color for the text.
                     fontSize: 15, // Font size for the text.
                   ),
@@ -91,7 +85,7 @@ class ResignationformScreen extends StatelessWidget {
                     ),
                     SizedBox(
                       height: SizeUtils.height *
-                          0.02, // Space below "From" section.
+                          0.01, // Space below "From" section.
                     ),
                     // Displays name of the sender.
                     Text(
@@ -123,7 +117,7 @@ class ResignationformScreen extends StatelessWidget {
                     ),
                     SizedBox(
                       height:
-                          SizeUtils.height * 0.02, // Space below "To" section.
+                          SizeUtils.height * 0.01, // Space below "To" section.
                     ),
                     // Displays name of the recipient.
                     Text(

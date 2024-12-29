@@ -268,7 +268,7 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
                               itemBuilder: (context, index) => List_tile(
                                   leadingIcon: Icons.saved_search,
                                   text: topsearch[index],
-                                  trailingIcon: Icons.stars_outlined),
+                                  trailingIcon: Icons.star_outline),
                               separatorBuilder: (context, index) => Divider(
                                     color: Colors.white.withAlpha(90),
                                     thickness: 1,

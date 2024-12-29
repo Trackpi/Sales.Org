@@ -13,6 +13,7 @@ import 'package:sales_org/views/profile_screens/passkey_screen.dart';
 import 'package:sales_org/views/profile_screens/profile_document_screen.dart';
 import 'package:sales_org/views/profile_screens/profile_personal_infoscreen.dart';
 import 'package:sales_org/views/profile_screens/profile_screen.dart';
+import 'package:sales_org/views/profile_screens/resignationform_screen.dart';
 import 'package:sales_org/views/profile_screens/team_details.dart';
 import 'package:sales_org/views/promotion_photo_video/promotion_photo_video.dart';
 import 'package:sales_org/views/search/search.dart';
@@ -41,6 +42,7 @@ class AppRoutes {
   static const String personalInfo = '/ProfilePersonalInfoscreen';
   static const String teamDetails = '/TeamDetails';
   static const String passKey = '/PasskeyScreen';
+  static const String resignationScreen = '/ResignationformScreen';
 
   /// Generates the appropriate route based on the given [settings].
   ///
@@ -127,6 +129,10 @@ class AppRoutes {
       case passKey:
         // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const PasskeyScreen());
+
+      case resignationScreen:
+        // Return a MaterialPageRoute that loads the LoginScreen widget
+        return MaterialPageRoute(builder: (_) => const ResignationformScreen());
 
       // Default case when no matching route is found
       default:

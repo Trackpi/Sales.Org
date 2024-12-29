@@ -175,22 +175,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
               SizedBox(
                 height: SizeUtils.height * 0.028,
               ),
-              Row(
-                children: [
-                  Text(
-                    "Resignation",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16),
-                  ),
-                  Spacer(),
-                  Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.white,
-                    size: 20,
-                  )
-                ],
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, AppRoutes.resignationScreen);
+                },
+                child: Row(
+                  children: [
+                    Text(
+                      "Resignation",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16),
+                    ),
+                    Spacer(),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.white,
+                      size: 20,
+                    )
+                  ],
+                ),
               ),
               SizedBox(
                 height: SizeUtils.height * 0.028,
@@ -260,9 +265,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               SizedBox(
                 height: SizeUtils.height * 0.028,
               ),
-              SizedBox(
-                height: SizeUtils.height * 0.035,
-              ),
               Text(
                 "Preferences",
                 style: TextStyle(
@@ -318,35 +320,37 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ],
               ),
               SizedBox(
-                height: SizeUtils.height * 0.065,
+                height: SizeUtils.height * 0.035,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    height: SizeUtils.height * 0.049,
-                    width: SizeUtils.width * 0.65,
-                    decoration: BoxDecoration(
-                        color: Color(0xFFFCB205),
-                        borderRadius: BorderRadius.circular(12)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.share,
-                          color: Colors.white,
-                        ),
-                        SizedBox(
-                          width: SizeUtils.width * 0.025,
-                        ),
-                        Text(
-                          'Share , Refer & Earn',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700),
-                        ),
-                      ],
+                  Expanded(
+                    child: Container(
+                      height: SizeUtils.height * 0.04,
+                      // width: SizeUtils.width * 0.65,
+                      decoration: BoxDecoration(
+                          color: Color(0xFFFCB205),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.share,
+                            color: Colors.white,
+                          ),
+                          SizedBox(
+                            width: SizeUtils.width * 0.055,
+                          ),
+                          Text(
+                            'Share, refer & earn',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -359,11 +363,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     color: Color(0xFFFCB205),
                     strokeWidth: 2,
                     child: Container(
-                      height: 35,
-                      width: 45,
+                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                      // height: SizeUtils.height * 0.035,
+                      // width: SizeUtils.width * 0.10,
                       alignment: Alignment.center,
                       child: Icon(
                         Icons.copy,
+                        size: 20,
                         color: Color(0xFFFCB205),
                       ),
                     ),
@@ -371,7 +377,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ],
               ),
               SizedBox(
-                height: SizeUtils.height * 0.055,
+                height: SizeUtils.height * 0.04,
               ),
               Center(
                 child: Container(
@@ -382,19 +388,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     children: [
                       Icon(
                         Icons.logout,
-                        color: Color(0xFFFCB205),
+                        color: Colors.white,
                       ),
                       Text(
                         "Logout",
                         style: TextStyle(
-                            color: Color(0xFFFCB205),
+                            color: Colors.white,
                             fontWeight: FontWeight.normal,
                             fontSize: 16),
                       ),
                     ],
                   ),
                   decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xFFFCB205), width: 2),
+                      border: Border.all(color: Colors.white, width: 2),
                       borderRadius: BorderRadius.circular(10)),
                 ),
               )

@@ -53,7 +53,7 @@ class TeamDetails extends StatelessWidget {
                 child: Row(
                   children: [
                     Container(
-                      height: SizeUtils.height * 0.120,
+                      height: SizeUtils.height * 0.130,
                       width: SizeUtils.width * 0.28,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
@@ -76,13 +76,23 @@ class TeamDetails extends StatelessWidget {
                               fontWeight: FontWeight.w500),
                         ),
                         SizedBox(
-                          height: SizeUtils.height * 0.015,
+                          height: SizeUtils.height * 0.01,
+                        ),
+                        Text(
+                          "Designation",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal),
+                        ),
+                        SizedBox(
+                          height: SizeUtils.height * 0.01,
                         ),
                         Row(
                           children: [
                             Icon(
                               Icons.email_outlined,
-                              color: Colors.white,
+                              color: Color(0xFFFFB300),
                               size: 16,
                             ),
                             SizedBox(
@@ -91,20 +101,20 @@ class TeamDetails extends StatelessWidget {
                             Text(
                               "manager@gmail.com",
                               style: TextStyle(
-                                  color: Colors.white,
+                                  color: Color(0xFFFFB300),
                                   fontSize: 12,
                                   fontWeight: FontWeight.normal),
                             ),
                           ],
                         ),
                         SizedBox(
-                          height: SizeUtils.height * 0.017,
+                          height: SizeUtils.height * 0.01,
                         ),
                         Row(
                           children: [
                             Icon(
                               Icons.phone,
-                              color: Colors.white,
+                              color: Color(0xFFFFB300),
                               size: 16,
                             ),
                             SizedBox(
@@ -113,7 +123,7 @@ class TeamDetails extends StatelessWidget {
                             Text(
                               "9865451287",
                               style: TextStyle(
-                                  color: Colors.white,
+                                  color: Color(0xFFFFB300),
                                   fontSize: 12,
                                   fontWeight: FontWeight.normal),
                             ),
