@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:sales_org/utils/size_utils.dart';
-import 'package:sales_org/widgets/list_tile.dart';
+import 'package:sales_org/views/faqs_screen/widgets/list_tile.dart';
 
 class FaqSavedScreen extends StatelessWidget {
   const FaqSavedScreen({super.key});

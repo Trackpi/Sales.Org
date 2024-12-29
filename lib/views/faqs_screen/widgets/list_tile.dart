@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../utils/size_utils.dart';
+import '../../../utils/size_utils.dart';
 
 class List_tile extends StatelessWidget {
   final IconData leadingIcon;
