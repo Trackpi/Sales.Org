@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:sales_org/views/saved_screen/tabview.dart';
+import 'package:sales_org/widgets/brochure_card.dart';
 
 import '../../gen/assets.gen.dart';
 import '../../utils/size_utils.dart';
@@ -160,7 +161,7 @@ class SavedScreen extends StatelessWidget {
             //saved companies
             TView('Cpmpany Name', 'type of company'),
             //saved products
-            TView('Product Name','price : 0000'),
+            TView('Product Name', 'price : 0000'),
 
             //brochures screen
             GridView.builder(
@@ -175,55 +176,7 @@ class SavedScreen extends StatelessWidget {
               ),
               itemCount: 5, // Number of items
               itemBuilder: (context, index) {
-                return Container(
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage("assets/png/company.png")),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: Icon(
-                                Icons.bookmark,
-                                color: Colors.orange,
-                                size: 30,
-                              ),
-                    ),
-                      Container(
-
-                        decoration: BoxDecoration(
-                            color: Color(0xFFFCB205),
-                          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10))
-                        ),
-                        child: Padding(
-                          padding:  EdgeInsets.all(SizeUtils.width*0.01),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-
-                              Text('Brochures'),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Icon(Icons.file_download_outlined,color: Colors.white,),
-                                  SizedBox(width: SizeUtils.width*0.01,),
-                                  Icon(Icons.share,color: Colors.white,)
-                                ],
-                              )
-
-                            ],
-                          ),
-                        ),
-                      )
-                      
-                    ],
-                  ),
-                );
+                return BrochureCard();
                 //   Container(
                 //  decoration: BoxDecoration(
                 //      color: Color(0xFFFCB205),
@@ -304,6 +257,7 @@ class SavedScreen extends StatelessWidget {
     );
   }
 }
+
 class TView extends StatelessWidget {
   final String s;
 
@@ -316,7 +270,7 @@ class TView extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: SizeUtils.height*0.01,
+          height: SizeUtils.height * 0.01,
         ),
         Expanded(
           child: GridView.builder(
@@ -327,7 +281,7 @@ class TView extends StatelessWidget {
             physics: ScrollPhysics(),
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              childAspectRatio: .75,
+                childAspectRatio: .75,
                 crossAxisCount: 2,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10),
@@ -387,7 +341,6 @@ class TView extends StatelessWidget {
                       )
                     ],
                   ),
-
                 ),
               );
             },
