@@ -18,22 +18,73 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
   Widget build(BuildContext context) {
     //dummy recent searches and top searches
 
-    List<String> recentSearches = [
-      "How to add payment method to this app?",
-      "How to reset my password?",
-      "How to change my account settings?",
-      "What is the refund policy?",
-      "How to contact customer support?",
-      "How to track my order?",
-      "How to update my profile information?",
-      "How to delete my account?",
-      "How to apply for a refund?",
-      "What are the app's privacy policies?",
+    final List<Map<String, String>> recentSearches = [
+      {
+        "question": "How to add payment method to this app?",
+        "answer":
+            "To add a payment method, go to Settings > Payment Methods > Add."
+      },
+      {
+        "question": "How to reset my password?",
+        "answer":
+            "Click on 'Forgot Password' on the login screen and follow the instructions."
+      },
+      {
+        "question": "How to change my account settings?",
+        "answer":
+            "Navigate to Settings and select the options you want to modify."
+      },
+      {
+        "question": "What is the refund policy?",
+        "answer":
+            "Refunds are processed within 7 business days. Terms and conditions apply."
+      },
+      {
+        "question": "How to contact customer support?",
+        "answer":
+            "You can reach customer support via the Help Center in the app."
+      },
+      {
+        "question": "How to add payment method to this app?",
+        "answer":
+            "To add a payment method, go to Settings > Payment Methods > Add."
+      },
+      {
+        "question": "How to reset my password?",
+        "answer":
+            "Click on 'Forgot Password' on the login screen and follow the instructions."
+      },
+      {
+        "question": "How to change my account settings?",
+        "answer":
+            "Navigate to Settings and select the options you want to modify."
+      },
+      {
+        "question": "What is the refund policy?",
+        "answer":
+            "Refunds are processed within 7 business days. Terms and conditions apply."
+      },
+      {
+        "question": "How to contact customer support?",
+        "answer":
+            "You can reach customer support via the Help Center in the app."
+      },
     ];
-    List topsearch = [
-      "Open the Tradebase app to get started and follow the steps. Tradebase doesn’t charge a fee to create or maintain your account.",
-      "How to add payment method to this app?",
-      "How to add payment method to this app?"
+
+    final List<Map<String, String>> topSearches = [
+      {
+        "question": "How to track my order?",
+        "answer": "Go to 'Orders' and select the order you want to track."
+      },
+      {
+        "question": "How to update my profile information?",
+        "answer": "Visit the Profile section and click 'Edit Profile'."
+      },
+      {
+        "question": "What are the app's privacy policies?",
+        "answer":
+            "You can find our privacy policies under the 'Legal' section in Settings."
+      },
     ];
     return Scaffold(
       backgroundColor: Colors.black,
@@ -167,10 +218,12 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
                               shrinkWrap: true,
                               physics: NeverScrollableScrollPhysics(),
                               itemBuilder: (context, index) {
-                                return Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: SizeUtils.height * 0.013),
-                                  child: Row(
+                                return ExpansionTile(
+                                  trailing: Icon(
+                                    Icons.star_outline,
+                                    color: Colors.white,
+                                  ),
+                                  title: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
@@ -185,23 +238,21 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
                                       Expanded(
                                         child: Text(
                                           softWrap: true,
-                                          recentSearches[index],
+                                          recentSearches[index]['question']!,
                                           style: TextStyle(
                                               color: Colors.white,
                                               fontWeight: FontWeight.bold,
                                               fontSize: 14),
                                         ),
                                       ),
-                                      SizedBox(
-                                        // width: 10,
-                                        width: SizeUtils.width * 0.02,
-                                      ),
-                                      Icon(
-                                        Icons.star_outline,
-                                        color: Colors.white,
-                                      ),
                                     ],
                                   ),
+                                  children: [
+                                    Text(
+                                      recentSearches[index]['answer']!,
+                                      style: TextStyle(color: Colors.white),
+                                    )
+                                  ],
                                 );
                               },
                               separatorBuilder: (context, index) => Divider(
@@ -265,15 +316,29 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
                           ListView.separated(
                               shrinkWrap: true,
                               physics: ScrollPhysics(),
-                              itemBuilder: (context, index) => List_tile(
-                                  leadingIcon: Icons.saved_search,
-                                  text: topsearch[index],
-                                  trailingIcon: Icons.star_outline),
+                              itemBuilder: (context, index) => ExpansionTile(
+                                    trailing: Icon(
+                                      Icons.star_outline,
+                                      color: Colors.white,
+                                    ),
+                                    children: [
+                                      Text(
+                                        topSearches[index]['answer']!,
+                                        style: TextStyle(color: Colors.white),
+                                      )
+                                    ],
+                                    title: List_tile(
+                                      isExpanded: true,
+                                      trailingIcon: Icons.star_outline,
+                                      leadingIcon: Icons.saved_search,
+                                      text: topSearches[index]['question']!,
+                                    ),
+                                  ),
                               separatorBuilder: (context, index) => Divider(
                                     color: Colors.white.withAlpha(90),
                                     thickness: 1,
                                   ),
-                              itemCount: topsearch.length),
+                              itemCount: topSearches.length),
                           Divider(
                             color: Colors.white.withAlpha(90),
                             thickness: 1,

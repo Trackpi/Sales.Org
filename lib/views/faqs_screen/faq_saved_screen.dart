@@ -9,6 +9,59 @@ class FaqSavedScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //dummy question
+    final List<Map<String, String>> savedSearches = [
+      {
+        "question": "How to add payment method to this app?",
+        "answer":
+            "To add a payment method, go to Settings > Payment Methods > Add."
+      },
+      {
+        "question": "How to reset my password?",
+        "answer":
+            "Click on 'Forgot Password' on the login screen and follow the instructions."
+      },
+      {
+        "question": "How to change my account settings?",
+        "answer":
+            "Navigate to Settings and select the options you want to modify."
+      },
+      {
+        "question": "What is the refund policy?",
+        "answer":
+            "Refunds are processed within 7 business days. Terms and conditions apply."
+      },
+      {
+        "question": "How to contact customer support?",
+        "answer":
+            "You can reach customer support via the Help Center in the app."
+      },
+      {
+        "question": "How to add payment method to this app?",
+        "answer":
+            "To add a payment method, go to Settings > Payment Methods > Add."
+      },
+      {
+        "question": "How to reset my password?",
+        "answer":
+            "Click on 'Forgot Password' on the login screen and follow the instructions."
+      },
+      {
+        "question": "How to change my account settings?",
+        "answer":
+            "Navigate to Settings and select the options you want to modify."
+      },
+      {
+        "question": "What is the refund policy?",
+        "answer":
+            "Refunds are processed within 7 business days. Terms and conditions apply."
+      },
+      {
+        "question": "How to contact customer support?",
+        "answer":
+            "You can reach customer support via the Help Center in the app."
+      },
+    ];
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
@@ -121,10 +174,22 @@ class FaqSavedScreen extends StatelessWidget {
                     ListView.separated(
                         shrinkWrap: true,
                         physics: NeverScrollableScrollPhysics(),
-                        itemBuilder: (context, index) => List_tile(
-                            leadingIcon: Icons.history,
-                            text: "How to add a payment method by this app?",
-                            trailingIcon: Icons.star_rounded),
+                        itemBuilder: (context, index) => ExpansionTile(
+                            trailing: Icon(
+                              Icons.star_outline,
+                              color: Colors.white,
+                            ),
+                            children: [
+                              Text(
+                                savedSearches[index]['answer']!,
+                                style: TextStyle(color: Colors.white),
+                              )
+                            ],
+                            title: List_tile(
+                                isExpanded: true,
+                                leadingIcon: Icons.saved_search_outlined,
+                                text: savedSearches[index]['question']!,
+                                trailingIcon: Icons.star_outline)),
                         separatorBuilder: (context, index) => Divider(
                               color: Color(0xffffffff).withAlpha(75),
                             ),
