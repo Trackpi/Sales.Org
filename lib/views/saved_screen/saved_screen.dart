@@ -176,65 +176,124 @@ class SavedScreen extends StatelessWidget {
               itemCount: 5, // Number of items
               itemBuilder: (context, index) {
                 return Container(
-                 decoration: BoxDecoration(
-                     color: Color(0xFFFCB205),
-
-                     borderRadius: BorderRadius.circular(10)
-                 ),
-                  child: Stack(
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: AssetImage("assets/png/company.png")),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // Card Container
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: Icon(
+                                Icons.bookmark,
+                                color: Colors.orange,
+                                size: 30,
+                              ),
+                    ),
                       Container(
-                        width: double.infinity,
-                        height: 193,
+
                         decoration: BoxDecoration(
-                          color: Colors.black,
-                          image: DecorationImage(
-                              fit: BoxFit.contain,
-                              image: AssetImage("assets/png/company.png")),
-                          borderRadius: BorderRadius.circular(10),
+                            color: Color(0xFFFCB205),
+                          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10))
                         ),
-                      ),
+                        child: Padding(
+                          padding:  EdgeInsets.all(SizeUtils.width*0.01),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
 
-                      // Bookmark Icon
-                      Positioned(
-                        top: 8,
-                        right: 8,
-                        child: Icon(
-                          Icons.bookmark,
-                          color: Colors.orange,
-                          size: 30,
-                        ),
-                      ),
-                      Positioned(
-                        bottom: 10,
-                        left: 8,
-                        child: Text('Brochures')
-                      ),
+                              Text('Brochures'),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Icon(Icons.file_download_outlined,color: Colors.white,),
+                                  SizedBox(width: SizeUtils.width*0.01,),
+                                  Icon(Icons.share,color: Colors.white,)
+                                ],
+                              )
 
-                      Positioned(
-                        bottom: 10,
-                        right: 8,
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(
-                              Icons.file_download_outlined,
-                              color: Colors.white,
-                              size: 18,
-                            ),
-                            SizedBox(width: 6),
-                            Icon(
-                              Icons.share,
-                              color: Colors.white,
-                              size: 18,
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
+                      )
+                      
                     ],
                   ),
                 );
+                //   Container(
+                //  decoration: BoxDecoration(
+                //      color: Color(0xFFFCB205),
+                //
+                //      borderRadius: BorderRadius.circular(10)
+                //  ),
+                //   child: Stack(
+                //     children: [
+                //       // Card Container
+                //       Container(
+                //         alignment: Alignment.bottomCenter,
+                //         width: double.infinity,
+                //         height: 193,
+                //         decoration: BoxDecoration(
+                //           color: Colors.black,
+                //           image: DecorationImage(
+                //               fit: BoxFit.contain,
+                //               image: AssetImage("assets/png/company.png")),
+                //           borderRadius: BorderRadius.circular(10),
+                //         ),
+                //         child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //           mainAxisSize: MainAxisSize.max,
+                //           children: [
+                //             Container(
+                //               color: Colors.orange,
+                //               child: Text('brochure'),
+                //             ),
+                //           ],
+                //         ),
+                //       ),
+                //
+                //       // Bookmark Icon
+                //       Positioned(
+                //         top: 8,
+                //         right: 8,
+                //         child: Icon(
+                //           Icons.bookmark,
+                //           color: Colors.orange,
+                //           size: 30,
+                //         ),
+                //       ),
+                //       // Positioned(
+                //       //   bottom: 10,
+                //       //   left: 8,
+                //       //   child: Text('Brochures')
+                //       // ),
+                //       //
+                //       // Positioned(
+                //       //   bottom: 10,
+                //       //   right: 8,
+                //       //   child: Row(
+                //       //     mainAxisSize: MainAxisSize.min,
+                //       //     children: [
+                //       //       Icon(
+                //       //         Icons.file_download_outlined,
+                //       //         color: Colors.white,
+                //       //         size: 18,
+                //       //       ),
+                //       //       SizedBox(width: 6),
+                //       //       Icon(
+                //       //         Icons.share,
+                //       //         color: Colors.white,
+                //       //         size: 18,
+                //       //       ),
+                //       //     ],
+                //       //   ),
+                //       // ),
+                //     ],
+                //   ),
+                // );
               },
             ),
             TabView(),
@@ -268,7 +327,7 @@ class TView extends StatelessWidget {
             physics: ScrollPhysics(),
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              childAspectRatio: 1,
+              childAspectRatio: .75,
                 crossAxisCount: 2,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10),
