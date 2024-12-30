@@ -21,7 +21,8 @@ class List_tile extends StatelessWidget {
       required this.text,
       required this.trailingIcon,
       this.trailingIconColor,
-      this.isExpanded = false});
+      this.isExpanded = false,
+      required TextStyle textStyle});
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +44,7 @@ class List_tile extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                   color: Color(0xffffffff),
-                  fontSize: 14,
+                  fontSize: 17,
                   fontWeight: FontWeight.w500),
             ),
           ),

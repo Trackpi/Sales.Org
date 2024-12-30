@@ -328,6 +328,7 @@ class _RecentSearchScreenState extends State<RecentSearchScreen> {
                                       )
                                     ],
                                     title: List_tile(
+                                      textStyle: TextStyle(color: Colors.white),
                                       isExpanded: true,
                                       trailingIcon: Icons.star_outline,
                                       leadingIcon: Icons.saved_search,

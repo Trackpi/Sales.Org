@@ -186,6 +186,7 @@ class FaqSavedScreen extends StatelessWidget {
                               )
                             ],
                             title: List_tile(
+                              textStyle:  TextStyle(color: Colors.white),
                                 isExpanded: true,
                                 leadingIcon: Icons.saved_search_outlined,
                                 text: savedSearches[index]['question']!,
