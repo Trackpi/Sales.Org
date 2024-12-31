@@ -17,6 +17,7 @@ class SavedScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
+          leading: Container(),
           centerTitle: true,
           actions: [
             Row(
