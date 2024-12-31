@@ -152,7 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Spacer(),
                               CircleAvatar(
                                 backgroundColor: Colors.orange.shade400,
-                                radius: 16,
+                                radius: 14,
                                 child: Icon(
                                   Icons.arrow_outward,
                                   color: Colors.white,
@@ -167,33 +167,39 @@ class _HomeScreenState extends State<HomeScreen> {
                       // height: 20,
                       height: SizeUtils.height * 0.03,
                     ),
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: SizeUtils.width * .05,
-                          vertical: SizeUtils.width * .04),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Course Batch Details",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14),
-                          ),
-                          CircleAvatar(
-                            backgroundColor: Colors.grey.shade800,
-                            radius: 16,
-                            child: Icon(
-                              Icons.arrow_outward,
-                              color: Colors.white,
+                    //batch details
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, AppRoutes.courseDetails);
+                      },
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: SizeUtils.width * .05,
+                            vertical: SizeUtils.height * .01),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Course Batch Details",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14),
                             ),
-                          )
-                        ],
+                            CircleAvatar(
+                              backgroundColor: Colors.grey.shade700,
+                              radius: 14,
+                              child: Icon(
+                                Icons.arrow_outward,
+                                color: Colors.white,
+                              ),
+                            )
+                          ],
+                        ),
+                        decoration: BoxDecoration(
+                            color: Color(0xFFFFB300),
+                            borderRadius: BorderRadius.circular(10)),
                       ),
-                      decoration: BoxDecoration(
-                          color: Color(0xFFFFB300),
-                          borderRadius: BorderRadius.circular(10)),
                     ),
                     SizedBox(
                       // height: 20,

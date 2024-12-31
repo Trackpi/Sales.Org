@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sales_org/views/bottom_navbar/bottom_navbar.dart';
 import 'package:sales_org/views/company_list/company_list.dart';
 import 'package:sales_org/views/company_profile/company_profile.dart';
+import 'package:sales_org/views/coursedetails_screen/coursedetails_screen.dart';
 import 'package:sales_org/views/faqs_screen/faq_no_saved_screen.dart';
 import 'package:sales_org/views/faqs_screen/top_search_screen.dart';
 import 'package:sales_org/views/home_screen/home_screen.dart';
@@ -43,6 +44,7 @@ class AppRoutes {
   static const String teamDetails = '/TeamDetails';
   static const String passKey = '/PasskeyScreen';
   static const String resignationScreen = '/ResignationformScreen';
+  static const String courseDetails = '/CoursedetailsScreen';
 
   /// Generates the appropriate route based on the given [settings].
   ///
@@ -133,6 +135,10 @@ class AppRoutes {
       case resignationScreen:
         // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const ResignationformScreen());
+
+      case courseDetails:
+        // Return a MaterialPageRoute that loads the LoginScreen widget
+        return MaterialPageRoute(builder: (_) => const CoursedetailsScreen());
 
       // Default case when no matching route is found
       default:
