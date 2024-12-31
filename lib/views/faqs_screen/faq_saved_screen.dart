@@ -174,25 +174,23 @@ class FaqSavedScreen extends StatelessWidget {
                     ListView.separated(
                         shrinkWrap: true,
                         physics: NeverScrollableScrollPhysics(),
-                        itemBuilder: (context, index) => Container(
-                          child: ExpansionTile(
-                              trailing: Icon(
-                                Icons.star_outline,
-                                color: Colors.white,
-                              ),
-                              children: [
-                                Text(
-                                  savedSearches[index]['answer']!,
-                                  style: TextStyle(color: Colors.white),
-                                )
-                              ],
-                              title: List_tile(
-                                textStyle:  TextStyle(color: Colors.white),
-                                  isExpanded: true,
-                                  leadingIcon: Icons.saved_search_outlined,
-                                  text: savedSearches[index]['question']!,
-                                  trailingIcon: Icons.star_outline)),
-                        ),
+                        itemBuilder: (context, index) => ExpansionTile(
+                            trailing: Icon(
+                              Icons.star_outline,
+                              color: Colors.white,
+                            ),
+                            children: [
+                              Text(
+                                savedSearches[index]['answer']!,
+                                style: TextStyle(color: Colors.white),
+                              )
+                            ],
+                            title: List_tile(
+                              textStyle:  TextStyle(color: Colors.white),
+                                isExpanded: true,
+                                leadingIcon: Icons.saved_search_outlined,
+                                text: savedSearches[index]['question']!,
+                                trailingIcon: Icons.star_outline)),
                         separatorBuilder: (context, index) => Divider(
                               color: Color(0xffffffff).withAlpha(75),
                             ),
