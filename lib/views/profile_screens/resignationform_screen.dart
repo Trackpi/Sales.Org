@@ -7,6 +7,22 @@ class ResignationformScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final firstTitle='Are you sure you want to resign?';
+    final firstBody='''Before you make your decision, here are some amazing perks you'll be leaving behind:
+    
+ Flexible Work Hours: Enjoy the freedom to balance work and personal life with our adaptable schedules.
+ Work-from-Home Opportunities: Continue working from the comfort of your home.
+ High-Paid Commissions: Maximize your earnings with competitive commission structures.
+ Career Growth: Unlock new opportunities for promotions and skill development.
+ Employee Rewards and Recognition: Be part of a culture that values your contributions.
+
+Do you still wish to proceed with your resignation?
+''';
+    final secondTitle='Are you sure about your resignation?';
+    final secondBody='''After clicking confirm:
+    
+ You will no longer have access to this app.
+ Your account will be deactivated. ''';
     return Scaffold(
       backgroundColor: Colors.black, // Sets the background color of the screen.
       appBar: AppBar(
@@ -182,6 +198,67 @@ class ResignationformScreen extends StatelessWidget {
               InkWell(
                 onTap: () {
                   // Action when the submit button is pressed.
+                  showDialog(context: context,
+                      builder: (context)=>Alert_Box(
+                        title: firstTitle,
+                        body: firstBody,
+                        actions: [
+                          Expanded(
+                            child: Padding(
+                              padding:  EdgeInsets.all( SizeUtils.width * 0.02),
+                              child: MaterialButton(
+                                  onPressed: (){
+                                Navigator.pop(context);
+                              },
+                                color: Colors.green,
+                                child: Text('Cancel'),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Padding(
+                              padding: EdgeInsets.all(SizeUtils.width * 0.02),
+                              child: MaterialButton(onPressed: (){
+                               Navigator.pop(context);
+                               showDialog(context: context,
+                                   builder: (context)=>Alert_Box(
+                                       title: secondTitle,
+                                       body: secondBody,
+                                     actions: [
+                                       Expanded(
+                                         child: Padding(
+                                           padding:  EdgeInsets.all( SizeUtils.width * 0.02),
+                                           child: MaterialButton(
+                                             onPressed: (){
+                                               Navigator.pop(context);
+                                             },
+                                             color: Colors.green,
+                                             child: Text('Cancel'),
+                                           ),
+                                         ),
+                                       ),
+                                       Expanded(
+                                         child: Padding(
+                                           padding: EdgeInsets.all(SizeUtils.width * 0.02),
+                                           child: MaterialButton(onPressed: (){
+                                             Navigator.pop(context);
+                                           },
+                                             color: Colors.red,
+                                             child: Text('Confirm'),
+                                           ),
+                                         ),
+                                       )
+                                     ],
+                                   )
+                               );
+                              },
+                                color: Colors.red,
+                                child: Text('Submit Resignation'),
+                              ),
+                            ),
+                          )
+                        ],
+                      ));
                 },
                 child: Container(
                   height: SizeUtils.height * 0.04, // Height of the button.
@@ -215,3 +292,57 @@ class ResignationformScreen extends StatelessWidget {
     );
   }
 }
+class Alert_Box extends StatelessWidget {
+  final String title;
+
+  final String body;
+
+  final  List<Widget>? actions;
+
+  const Alert_Box({required this.title,required this.body, this.actions, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      backgroundColor: Color(0xFF1A1A1A),
+      content: Container(
+        width: SizeUtils.width * .8,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              title,
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 17,
+              ),
+            ),
+            SizedBox(
+              height: SizeUtils.height * 0.02,
+            ),
+            Text(
+              textAlign: TextAlign.left,
+              body,
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.normal,
+                fontSize: 13,
+              ),
+            ),
+            SizedBox(
+              height: SizeUtils.height * 0.04,
+            ),
+            Row(
+              children: actions!,
+            )
+
+          ],
+        ),
+      ),
+
+    );
+  }
+}
+
