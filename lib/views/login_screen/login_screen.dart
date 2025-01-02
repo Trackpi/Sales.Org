@@ -77,6 +77,7 @@ class LoginScreen extends StatelessWidget {
                           context: context,
                           builder: (context) {
                             return AlertDialog(
+                              backgroundColor: Color(0xFF1A1A1A),
                               content: Container(
                                 width: SizeUtils.width * .8,
                                 child: Column(
@@ -85,7 +86,7 @@ class LoginScreen extends StatelessWidget {
                                     Text(
                                       "Forgot Password ?",
                                       style: TextStyle(
-                                        color: Color(0xFF000000),
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 17,
                                       ),
@@ -97,7 +98,7 @@ class LoginScreen extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       "If you Forget Password \n please check your offer letter or \n contact your manager !!",
                                       style: TextStyle(
-                                        color: Color(0xFF000000),
+                                        color: Colors.white,
                                         fontWeight: FontWeight.normal,
                                         fontSize: 13,
                                       ),
@@ -106,7 +107,7 @@ class LoginScreen extends StatelessWidget {
                                       height: SizeUtils.height * 0.02,
                                     ),
                                     Divider(
-                                      thickness: 2,
+                                      color: Colors.grey,
                                     ),
                                   ],
                                 ),
@@ -121,7 +122,7 @@ class LoginScreen extends StatelessWidget {
                                     child: Text(
                                       "OK",
                                       style: TextStyle(
-                                        color: Colors.blue,
+                                        color: Color(0xFFFCB205),
                                         fontWeight: FontWeight.bold,
                                         fontSize: 16,
                                       ),

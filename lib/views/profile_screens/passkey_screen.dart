@@ -77,22 +77,113 @@ class PasskeyScreen extends StatelessWidget {
                 height: SizeUtils.height * 0.066,
               ),
               // Save button with gradient background
-              Container(
-                height: SizeUtils.height * 0.04,
-                width: SizeUtils.width * 0.3,
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [
-                      Color(0xffFEDC3F), // Gradient start color
-                      Color(0xffFE8900), // Gradient end color
-                    ], begin: Alignment.centerLeft, end: Alignment.centerRight),
-                    borderRadius: BorderRadius.circular(8)),
-                child: Center(
-                  child: Text(
-                    "Save", // Save button text
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold),
+              GestureDetector(
+                onTap: () {
+                  //confirmation box for passkey change
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        backgroundColor: Color(0xFF1A1A1A),
+                        content: Container(
+                          padding: EdgeInsets.symmetric(
+                              vertical: SizeUtils.height * 0.03),
+                          width: SizeUtils.width * .8,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Container(
+                                alignment: Alignment.center,
+                                height: SizeUtils.height * 0.09,
+                                child: Icon(
+                                  Icons.check,
+                                  size: 40,
+                                  color: Colors.green,
+                                ),
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(
+                                        width: 3, color: Colors.green),
+                                    shape: BoxShape.circle),
+                              ),
+                              SizedBox(
+                                height: SizeUtils.height * 0.01,
+                              ),
+                              Text(
+                                textAlign: TextAlign.center,
+                                "Your PassKey has been reset \n Successfully",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 17,
+                                ),
+                              ),
+                              SizedBox(
+                                height: SizeUtils.height * 0.02,
+                              ),
+                              Text(
+                                textAlign: TextAlign.center,
+                                "For your security, please login again \n using your updated passkey.",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 13,
+                                ),
+                              ),
+                              SizedBox(
+                                height: SizeUtils.height * 0.04,
+                              ),
+                              Container(
+                                height: SizeUtils.height * 0.03,
+                                width: SizeUtils.width * 0.25,
+                                decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                        colors: [
+                                          Color(
+                                              0xffFEDC3F), // Gradient start color
+                                          Color(
+                                              0xffFE8900), // Gradient end color
+                                        ],
+                                        begin: Alignment.centerLeft,
+                                        end: Alignment.centerRight),
+                                    borderRadius: BorderRadius.circular(8)),
+                                child: Center(
+                                  child: Text(
+                                    "OK", // Save button text
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
+                child: Container(
+                  height: SizeUtils.height * 0.04,
+                  width: SizeUtils.width * 0.3,
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          colors: [
+                            Color(0xffFEDC3F), // Gradient start color
+                            Color(0xffFE8900), // Gradient end color
+                          ],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight),
+                      borderRadius: BorderRadius.circular(8)),
+                  child: Center(
+                    child: Text(
+                      "Save", // Save button text
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ),
