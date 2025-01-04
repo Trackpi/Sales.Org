@@ -3,6 +3,7 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:sales_org/routes/app_routes.dart';
 import 'package:sales_org/utils/size_utils.dart';
+import 'package:sales_org/views/profile_screens/resignationform_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -91,11 +92,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 height: SizeUtils.height * 0.035,
               ),
               Text(
-                "Personal Documents",
+                "Account Management & Policies",
                 style: TextStyle(
                     color: Color(0xFFFCB205),
                     fontWeight: FontWeight.bold,
-                    fontSize: 16),
+                    fontSize: 15),
               ),
               SizedBox(
                 height: SizeUtils.height * 0.02,
@@ -265,12 +266,202 @@ class _ProfileScreenState extends State<ProfileScreen> {
               SizedBox(
                 height: SizeUtils.height * 0.028,
               ),
+              Row(
+                children: [
+                  Text(
+                    "Bank Account Details",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16),
+                  ),
+                  Spacer(),
+                  Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.white,
+                    size: 20,
+                  )
+                ],
+              ),
+              SizedBox(
+                height: SizeUtils.height * 0.028,
+              ),
               Text(
                 "Preferences",
                 style: TextStyle(
                     color: Color(0xFFFCB205),
                     fontWeight: FontWeight.bold,
-                    fontSize: 16),
+                    fontSize: 15),
+              ),
+              SizedBox(
+                height: SizeUtils.height * 0.022,
+              ), //clear cache
+              InkWell(
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        backgroundColor: Color(0xFF1A1A1A),
+                        content: Container(
+                          padding: EdgeInsets.symmetric(
+                              vertical: SizeUtils.height * 0.01),
+                          width: SizeUtils.width * 0.8,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                "Clear History and Data",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16),
+                              ),
+                              SizedBox(
+                                height: SizeUtils.height * 0.02,
+                              ),
+                              Center(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      "Clearing will remove all history and other ",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.normal),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Center(
+                                child: Text(
+                                  " browsing data",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal),
+                                ),
+                              ),
+                              SizedBox(
+                                height: SizeUtils.height * 0.02,
+                              ),
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: Padding(
+                                        padding: EdgeInsets.all(
+                                            SizeUtils.width * 0.02),
+                                        child: InkWell(
+                                          onTap: () {
+                                            // cancel button
+                                            Navigator.pop(context);
+                                          },
+                                          child: Container(
+                                            child: Center(
+                                              child: Text(
+                                                "Cancel",
+                                                style: TextStyle(
+                                                    color: Colors.amber,
+                                                    //s  fontSize: 16,
+                                                    fontWeight:
+                                                        FontWeight.w500),
+                                              ),
+                                            ),
+                                            height: SizeUtils.height * 0.05,
+                                            width: SizeUtils.width * 0.25,
+                                            decoration: BoxDecoration(
+                                                border: Border.all(
+                                                    color: Colors.amber,
+                                                    width: 2),
+                                                borderRadius:
+                                                    BorderRadius.circular(10)),
+                                          ),
+                                        )),
+                                  ),
+                                  Expanded(
+                                    child: Padding(
+                                        padding: EdgeInsets.all(
+                                            SizeUtils.width * 0.02),
+                                        child: InkWell(
+                                          onTap: () {
+                                            //clearbutton
+                                          },
+                                          child: Container(
+                                            child: Center(
+                                              child: Text(
+                                                "Clear",
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    //s  fontSize: 16,
+                                                    fontWeight:
+                                                        FontWeight.w500),
+                                              ),
+                                            ),
+                                            height: SizeUtils.height * 0.05,
+                                            width: SizeUtils.width * 0.25,
+                                            decoration: BoxDecoration(
+                                                gradient: LinearGradient(
+                                                  colors: [
+                                                    Color(
+                                                        0xffFEDC3F), // Gradient start color.
+                                                    Color(
+                                                        0xffFE8900), // Gradient end color.
+                                                  ],
+                                                  begin: Alignment
+                                                      .centerLeft, // Gradient starting point.
+                                                  end: Alignment
+                                                      .centerRight, // Gradient ending point.
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(10)),
+                                          ),
+                                        )),
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                  // AlertDialog(
+                  //   actions: [
+                  //     Expanded(
+                  //       child: Padding(
+                  //         padding: EdgeInsets.all(SizeUtils.width * 0.02),
+                  //         child: MaterialButton(
+                  //           onPressed: () {
+                  //             Navigator.pop(context);
+                  //           },
+                  //           color: Colors.green,
+                  //           child: Text('Cancel'),
+                  //         ),
+                  //       ),
+                  //     ),
+                  //     Expanded(
+                  //       child: Padding(
+                  //         padding: EdgeInsets.all(SizeUtils.width * 0.02),
+                  //         child: MaterialButton(
+                  //           onPressed: () {
+                  //             Navigator.pop(context);
+                  //           },
+                  //           color: Colors.red,
+                  //           child: Text('Confirm'),
+                  //         ),
+                  //       ),
+                  //     )
+                  //   ],
+                  // );
+                },
+                child: Text(
+                  "Clear Cache",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16),
+                ),
               ),
               SizedBox(
                 height: SizeUtils.height * 0.022,
