@@ -12,8 +12,18 @@ import 'package:flutter/widgets.dart';
 class $AssetsPngGen {
   const $AssetsPngGen();
 
+  /// File path: assets/png/calculator.png
+  AssetGenImage get calculator =>
+      const AssetGenImage('assets/png/calculator.png');
+
   /// File path: assets/png/company.png
   AssetGenImage get company => const AssetGenImage('assets/png/company.png');
+
+  /// File path: assets/png/forms.png
+  AssetGenImage get forms => const AssetGenImage('assets/png/forms.png');
+
+  /// File path: assets/png/graph.png
+  AssetGenImage get graph => const AssetGenImage('assets/png/graph.png');
 
   /// File path: assets/png/image.png
   AssetGenImage get image => const AssetGenImage('assets/png/image.png');
@@ -25,8 +35,29 @@ class $AssetsPngGen {
   AssetGenImage get noResultFound =>
       const AssetGenImage('assets/png/no result found.png');
 
+  /// File path: assets/png/statement.png
+  AssetGenImage get statement =>
+      const AssetGenImage('assets/png/statement.png');
+
+  /// File path: assets/png/ticket.png
+  AssetGenImage get ticket => const AssetGenImage('assets/png/ticket.png');
+
+  /// File path: assets/png/todolist.png
+  AssetGenImage get todolist => const AssetGenImage('assets/png/todolist.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [company, image, logo, noResultFound];
+  List<AssetGenImage> get values => [
+        calculator,
+        company,
+        forms,
+        graph,
+        image,
+        logo,
+        noResultFound,
+        statement,
+        ticket,
+        todolist
+      ];
 }
 
 class $AssetsSvgGen {

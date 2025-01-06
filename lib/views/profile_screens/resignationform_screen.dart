@@ -1,4 +1,3 @@
-
 //deekshith
 import 'package:flutter/material.dart';
 import 'package:sales_org/utils/size_utils.dart';
@@ -9,8 +8,9 @@ class ResignationformScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final firstTitle='Are you sure you want to resign?';
-    final firstBody='''Before you make your decision, here are some amazing perks you'll be leaving behind:
+    final firstTitle = 'Are you sure you want to resign?';
+    final firstBody =
+        '''Before you make your decision, here are some amazing perks you'll be leaving behind:
     
  Flexible Work Hours: Enjoy the freedom to balance work and personal life with our adaptable schedules.
  Work-from-Home Opportunities: Continue working from the comfort of your home.
@@ -20,8 +20,8 @@ class ResignationformScreen extends StatelessWidget {
 
 Do you still wish to proceed with your resignation?
 ''';
-    final secondTitle='Are you sure about your resignation?';
-    final secondBody='''After clicking confirm:
+    final secondTitle = 'Are you sure about your resignation?';
+    final secondBody = '''After clicking confirm:
     
  You will no longer have access to this app.
  Your account will be deactivated. ''';
@@ -200,67 +200,153 @@ Do you still wish to proceed with your resignation?
               InkWell(
                 onTap: () {
                   // Action when the submit button is pressed.
-                  showDialog(context: context,
-                      builder: (context)=>Alert_Box(
-                        title: firstTitle,
-                        body: firstBody,
-                        actions: [
-                          Expanded(
-                            child: Padding(
-                              padding:  EdgeInsets.all( SizeUtils.width * 0.02),
-                              child: MaterialButton(
-                                  onPressed: (){
-                                Navigator.pop(context);
-                              },
-                                color: Colors.green,
-                                child: Text('Cancel'),
+                  showDialog(
+                      context: context,
+                      builder: (context) => Alert_Box(
+                            title: firstTitle,
+                            body: firstBody,
+                            actions: [
+                              Expanded(
+                                child: Padding(
+                                  padding:
+                                      EdgeInsets.all(SizeUtils.width * 0.02),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      height: 40,
+                                      width: 150,
+                                      child: Text(
+                                        textAlign: TextAlign.center,
+                                        "Cancel",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      decoration: BoxDecoration(
+                                          color: Colors.green,
+                                          borderRadius:
+                                              BorderRadius.circular(10)),
+                                    ),
+                                  ),
+                                ),
                               ),
-                            ),
-                          ),
-                          Expanded(
-                            child: Padding(
-                              padding: EdgeInsets.all(SizeUtils.width * 0.02),
-                              child: MaterialButton(onPressed: (){
-                               Navigator.pop(context);
-                               showDialog(context: context,
-                                   builder: (context)=>Alert_Box(
-                                       title: secondTitle,
-                                       body: secondBody,
-                                     actions: [
-                                       Expanded(
-                                         child: Padding(
-                                           padding:  EdgeInsets.all( SizeUtils.width * 0.02),
-                                           child: MaterialButton(
-                                             onPressed: (){
-                                               Navigator.pop(context);
-                                             },
-                                             color: Colors.green,
-                                             child: Text('Cancel'),
-                                           ),
-                                         ),
-                                       ),
-                                       Expanded(
-                                         child: Padding(
-                                           padding: EdgeInsets.all(SizeUtils.width * 0.02),
-                                           child: MaterialButton(onPressed: (){
-                                             Navigator.pop(context);
-                                           },
-                                             color: Colors.red,
-                                             child: Text('Confirm'),
-                                           ),
-                                         ),
-                                       )
-                                     ],
-                                   )
-                               );
-                              },
-                                color: Colors.red,
-                                child: Text('Submit Resignation'),
-                              ),
-                            ),
-                          )
-                        ],
-                      ));
+                              Expanded(
+                                child: Padding(
+                                  padding:
+                                      EdgeInsets.all(SizeUtils.width * 0.02),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                      showDialog(
+                                          context: context,
+                                          builder: (context) => Alert_Box(
+                                                title: secondTitle,
+                                                body: secondBody,
+                                                actions: [
+                                                  Expanded(
+                                                    child: Padding(
+                                                      padding: EdgeInsets.all(
+                                                          SizeUtils.width *
+                                                              0.02),
+                                                      child: GestureDetector(
+                                                        onTap: () {
+                                                          Navigator.pop(
+                                                              context);
+                                                        },
+                                                        child: Container(
+                                                          alignment:
+                                                              Alignment.center,
+                                                          height: 40,
+                                                          width: 150,
+                                                          child: Text(
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            "Cancel",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .white,
+                                                                fontSize: 15,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold),
+                                                          ),
+                                                          decoration: BoxDecoration(
+                                                              color:
+                                                                  Colors.green,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          10)),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Expanded(
+                                                    child: Padding(
+                                                      padding: EdgeInsets.all(
+                                                          SizeUtils.width *
+                                                              0.02),
+                                                      child: GestureDetector(
+                                                        onTap: () {
+                                                          Navigator.pop(
+                                                              context);
+                                                        },
+                                                        child: Container(
+                                                          alignment:
+                                                              Alignment.center,
+                                                          height: 40,
+                                                          width: 150,
+                                                          child: Text(
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            "Confirm",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .white,
+                                                                fontSize: 15,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold),
+                                                          ),
+                                                          decoration: BoxDecoration(
+                                                              color: Colors.red,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          10)),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  )
+                                                ],
+                                              ));
+                                    },
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      height: 40,
+                                      width: 150,
+                                      child: Text(
+                                        textAlign: TextAlign.center,
+                                        "Submit Resignation",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      decoration: BoxDecoration(
+                                          color: Colors.red,
+                                          borderRadius:
+                                              BorderRadius.circular(10)),
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ));
                 },
                 child: Container(
                   height: SizeUtils.height * 0.04, // Height of the button.
@@ -294,21 +380,23 @@ Do you still wish to proceed with your resignation?
     );
   }
 }
+
 class Alert_Box extends StatelessWidget {
   final String title;
 
   final String body;
 
-  final  List<Widget>? actions;
+  final List<Widget>? actions;
 
-  const Alert_Box({required this.title,required this.body, this.actions, super.key});
+  const Alert_Box(
+      {required this.title, required this.body, this.actions, super.key});
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
       backgroundColor: Color(0xFF1A1A1A),
       content: Container(
-        width: SizeUtils.width * .8,
+        width: SizeUtils.width * .9,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -339,12 +427,9 @@ class Alert_Box extends StatelessWidget {
             Row(
               children: actions!,
             )
-
           ],
         ),
       ),
-
     );
   }
 }
-
