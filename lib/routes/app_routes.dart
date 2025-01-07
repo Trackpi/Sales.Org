@@ -5,8 +5,9 @@ import 'package:sales_org/views/company_profile/company_profile.dart';
 import 'package:sales_org/views/coursedetails_screen/coursedetails_screen.dart';
 import 'package:sales_org/views/faqs_screen/faq_no_saved_screen.dart';
 import 'package:sales_org/views/faqs_screen/top_search_screen.dart';
-import 'package:sales_org/views/home_screen/home_screen.dart';
+
 import 'package:sales_org/views/login_screen/login_screen.dart';
+import 'package:sales_org/views/operations_page/operation_forms_page.dart';
 import 'package:sales_org/views/posters/posters.dart';
 import 'package:sales_org/views/products/products.dart';
 import 'package:sales_org/views/products/products_profile.dart';
@@ -45,6 +46,7 @@ class AppRoutes {
   static const String passKey = '/PasskeyScreen';
   static const String resignationScreen = '/ResignationformScreen';
   static const String courseDetails = '/CoursedetailsScreen';
+  static const String operationFormPage = '/FormsPageOperations';
 
   /// Generates the appropriate route based on the given [settings].
   ///
@@ -139,6 +141,10 @@ class AppRoutes {
       case courseDetails:
         // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const CoursedetailsScreen());
+
+      case operationFormPage:
+        // Return a MaterialPageRoute that loads the LoginScreen widget
+        return MaterialPageRoute(builder: (_) => const FormsPageOperations());
 
       // Default case when no matching route is found
       default:
