@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sales_org/views/faqs_screen/recent_search_screen.dart';
 import 'package:sales_org/views/home_screen/home_screen.dart';
+import 'package:sales_org/views/operations_page/operation_categories_page.dart';
 import 'package:sales_org/views/saved_screen/saved_screen.dart';
 
 class BottomNavbar extends StatefulWidget {
@@ -14,9 +15,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
   int selectedIndex = 0;
   List<Widget> myscreens = [
     HomeScreen(),
-    Container(
-      color: Colors.green,
-    ),
+    OperationCategoriesPage(),
     RecentSearchScreen(),
     SavedScreen(),
   ];
