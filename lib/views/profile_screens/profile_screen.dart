@@ -3,7 +3,6 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:sales_org/routes/app_routes.dart';
 import 'package:sales_org/utils/size_utils.dart';
-import 'package:sales_org/views/profile_screens/resignationform_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
