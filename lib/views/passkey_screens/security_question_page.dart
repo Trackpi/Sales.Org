@@ -1,9 +1,8 @@
 //for abijith
-import 'package:datepicker_dropdown/datepicker_dropdown.dart';
-import 'package:datepicker_dropdown/order_format.dart';
 import 'package:flutter/material.dart';
 import 'package:sales_org/theme/constants.dart';
 import 'package:sales_org/utils/size_utils.dart';
+import 'package:sales_org/views/passkey_screens/widget/common_button.dart';
 
 class PasskeySecurityQuestionPage extends StatelessWidget {
   const PasskeySecurityQuestionPage({super.key});
@@ -104,22 +103,7 @@ class PasskeySecurityQuestionPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: SizeUtils.width * 0.075,
-                      vertical: SizeUtils.height * 0.01),
-                  decoration: BoxDecoration(
-                    gradient: buttonGradientColor,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Text(
-                    "Submit",
-                    style: TextStyle(
-                        color: pureWhite,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15),
-                  ),
-                ),
+                CommonButton(),
               ],
             )
           ],
