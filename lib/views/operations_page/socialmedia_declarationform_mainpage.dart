@@ -263,19 +263,22 @@ class _SocialmediaDeclarationformMainpageState
         SizedBox(
           height: SizeUtils.height * 0.02, // Spacer for layout adjustment.
         ),
-        TextFormField(
-          decoration: InputDecoration(
-            suffixIcon: IconButton(
-              color: Colors.white,
-              onPressed: () {}, // Add logic for dropdown or action.
-              icon: Icon(Icons.keyboard_arrow_down_sharp),
-            ),
-            fillColor: Color(0xff2A2A2A), // Background color for the field.
-            filled: true,
-            hintText: hint, // Hint text for the input.
-            hintStyle: TextStyle(color: Colors.white),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10), // Rounded corners.
+        SizedBox(
+          height: SizeUtils.height * 0.050, // Sets height dynamically.
+          child: TextFormField(
+            decoration: InputDecoration(
+              suffixIcon: IconButton(
+                color: Colors.white,
+                onPressed: () {}, // Add logic for dropdown or action.
+                icon: Icon(Icons.keyboard_arrow_down_sharp),
+              ),
+              fillColor: Color(0xff2A2A2A), // Background color for the field.
+              filled: true,
+              hintText: hint, // Hint text for the input.
+              hintStyle: TextStyle(color: Colors.white),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10), // Rounded corners.
+              ),
             ),
           ),
         ),
