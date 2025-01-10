@@ -15,7 +15,6 @@ class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   double _buttonOpacity = 0.0; // Button fade-in opacity
-  double _textOpacity = 0.0; // Text fade-in opacity
 
   @override
   void initState() {
@@ -26,8 +25,6 @@ class _SplashScreenState extends State<SplashScreen>
 
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        Future.delayed(const Duration(milliseconds: 300),
-            () => setState(() => _textOpacity = 1.0));
         Future.delayed(const Duration(milliseconds: 800),
             () => setState(() => _buttonOpacity = 1.0));
       }
@@ -64,25 +61,23 @@ class _SplashScreenState extends State<SplashScreen>
                   curve: Curves.easeIn,
                   builder: (context, scale, child) =>
                       Transform.scale(scale: scale, child: child),
-                  child: Image.asset(Assets.png.logo.path,
-                      width: 200, height: 200),
-                ),
-              ),
-              AnimatedOpacity(
-                opacity: _textOpacity,
-                duration: const Duration(seconds: 1),
-                curve: Curves.easeIn,
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 180),
-                    child: const Text(
-                      "Your Strategic Growth Partner",
-                      style: TextStyle(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        Assets.png.logo.path,
+                        width: 200,
+                        height: 200,
+                      ),
+                      const Text(
+                        "Your Strategic Growth Partner",
+                        style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -102,14 +97,16 @@ class _SplashScreenState extends State<SplashScreen>
                         width: 313,
                         height: 49,
                         decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8)),
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
                         child: const Text(
                           "Get Started",
                           style: TextStyle(
-                              color: Color(0xffFE8900),
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold),
+                            color: Color(0xffFE8900),
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ),
