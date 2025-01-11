@@ -15,18 +15,22 @@ class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   double _buttonOpacity = 0.0; // Button fade-in opacity
+  double _textOpacity = 0.0; // Text fade-in opacity
 
   @override
   void initState() {
     super.initState();
     _controller =
-        AnimationController(vsync: this, duration: const Duration(seconds: 3))
+        AnimationController(vsync: this, duration: const Duration(seconds: 2))
           ..forward();
 
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        Future.delayed(const Duration(milliseconds: 800),
-            () => setState(() => _buttonOpacity = 1.0));
+        Future.delayed(const Duration(milliseconds: 100), () {
+          setState(() => _textOpacity = 1.0); // Show text with fade-in
+          Future.delayed(const Duration(milliseconds: 100),
+              () => setState(() => _buttonOpacity = 1.0)); // Show button
+        });
       }
     });
   }
@@ -69,12 +73,17 @@ class _SplashScreenState extends State<SplashScreen>
                         width: 200,
                         height: 200,
                       ),
-                      const Text(
-                        "Your Strategic Growth Partner",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                      AnimatedOpacity(
+                        opacity: _textOpacity,
+                        duration: const Duration(seconds: 1),
+                        curve: Curves.easeIn,
+                        child: const Text(
+                          "Your Strategic Growth Partner",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
                         ),
                       ),
                     ],
