@@ -8,6 +8,8 @@ import 'package:sales_org/views/faqs_screen/top_search_screen.dart';
 
 import 'package:sales_org/views/login_screen/login_screen.dart';
 import 'package:sales_org/views/operations_page/operation_forms_page.dart';
+import 'package:sales_org/views/operations_page/socialmedia_declarationform.dart';
+import 'package:sales_org/views/operations_page/socialmedia_declarationform_mainpage.dart';
 import 'package:sales_org/views/posters/posters.dart';
 import 'package:sales_org/views/products/products.dart';
 import 'package:sales_org/views/products/products_profile.dart';
@@ -47,6 +49,9 @@ class AppRoutes {
   static const String resignationScreen = '/ResignationformScreen';
   static const String courseDetails = '/CoursedetailsScreen';
   static const String operationFormPage = '/FormsPageOperations';
+  static const String socialMediaMainPage =
+      '/SocialmediaDeclarationformMainpage';
+  static const String socialMediaSubmissionPage = '/SocialMediaDeclarationForm';
 
   /// Generates the appropriate route based on the given [settings].
   ///
@@ -145,6 +150,16 @@ class AppRoutes {
       case operationFormPage:
         // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const FormsPageOperations());
+
+      case socialMediaMainPage:
+        // Return a MaterialPageRoute that loads the LoginScreen widget
+        return MaterialPageRoute(
+            builder: (_) => const SocialmediaDeclarationformMainpage());
+
+      case socialMediaSubmissionPage:
+        // Return a MaterialPageRoute that loads the LoginScreen widget
+        return MaterialPageRoute(
+            builder: (_) => const SocialMediaDeclarationForm());
 
       // Default case when no matching route is found
       default:

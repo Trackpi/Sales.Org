@@ -10,21 +10,8 @@ class ResignationformScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final firstTitle = 'Are you sure you want to resign?';
     final firstBody =
-        '''Before you make your decision, here are some amazing perks you'll be leaving behind:
-    
- Flexible Work Hours: Enjoy the freedom to balance work and personal life with our adaptable schedules.
- Work-from-Home Opportunities: Continue working from the comfort of your home.
- High-Paid Commissions: Maximize your earnings with competitive commission structures.
- Career Growth: Unlock new opportunities for promotions and skill development.
- Employee Rewards and Recognition: Be part of a culture that values your contributions.
+        '''Before you make your decision, here are some amazing perks you'll be leaving behind:''';
 
-Do you still wish to proceed with your resignation?
-''';
-    final secondTitle = 'Are you sure about your resignation?';
-    final secondBody = '''After clicking confirm:
-    
- You will no longer have access to this app.
- Your account will be deactivated. ''';
     return Scaffold(
       backgroundColor: Colors.black, // Sets the background color of the screen.
       appBar: AppBar(
@@ -216,8 +203,8 @@ Do you still wish to proceed with your resignation?
                                     },
                                     child: Container(
                                       alignment: Alignment.center,
-                                      height: 40,
-                                      width: 150,
+                                      height: SizeUtils.height * 0.045,
+                                      width: SizeUtils.width * 0.15,
                                       child: Text(
                                         textAlign: TextAlign.center,
                                         "Cancel",
@@ -227,7 +214,7 @@ Do you still wish to proceed with your resignation?
                                             fontWeight: FontWeight.bold),
                                       ),
                                       decoration: BoxDecoration(
-                                          color: Colors.green,
+                                          color: Color(0xFF00AA40),
                                           borderRadius:
                                               BorderRadius.circular(10)),
                                     ),
@@ -243,92 +230,191 @@ Do you still wish to proceed with your resignation?
                                       Navigator.pop(context);
                                       showDialog(
                                           context: context,
-                                          builder: (context) => Alert_Box(
-                                                title: secondTitle,
-                                                body: secondBody,
+                                          builder: (context) => AlertDialog(
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12)),
+                                                backgroundColor:
+                                                    Color(0xFF2A2A2A),
+                                                title: Text(
+                                                  'Are you sure about your resignation?',
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                  // textAlign: TextAlign.center,
+                                                ),
+                                                content: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  children: [
+                                                    Text(
+                                                      'After clicking confirm:',
+                                                      style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 15,
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                    ),
+                                                    SizedBox(height: 8),
+                                                    RichText(
+                                                      text: TextSpan(
+                                                        style: TextStyle(
+                                                            fontSize: 14),
+                                                        children: [
+                                                          TextSpan(
+                                                            text: '• ',
+                                                            style: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                color: Colors
+                                                                    .white),
+                                                          ),
+                                                          TextSpan(
+                                                            text:
+                                                                'You will no longer have access to this app.\n',
+                                                            style: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                color: Colors
+                                                                    .white),
+                                                          ),
+                                                          TextSpan(
+                                                            text: '• ',
+                                                            style: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                color: Colors
+                                                                    .white),
+                                                          ),
+                                                          TextSpan(
+                                                            text:
+                                                                'Your account will be deactivated.',
+                                                            style: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                color: Colors
+                                                                    .white),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
                                                 actions: [
-                                                  Expanded(
-                                                    child: Padding(
-                                                      padding: EdgeInsets.all(
-                                                          SizeUtils.width *
-                                                              0.02),
-                                                      child: GestureDetector(
-                                                        onTap: () {
-                                                          Navigator.pop(
-                                                              context);
-                                                        },
-                                                        child: Container(
-                                                          alignment:
-                                                              Alignment.center,
-                                                          height: 40,
-                                                          width: 150,
-                                                          child: Text(
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            "Cancel",
-                                                            style: TextStyle(
-                                                                color: Colors
-                                                                    .white,
-                                                                fontSize: 15,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold),
+                                                  Row(
+                                                    children: [
+                                                      Expanded(
+                                                        child: Padding(
+                                                          padding: EdgeInsets
+                                                              .all(SizeUtils
+                                                                      .width *
+                                                                  0.02),
+                                                          child:
+                                                              GestureDetector(
+                                                            onTap: () {
+                                                              Navigator.pop(
+                                                                  context);
+                                                            },
+                                                            child: Container(
+                                                              alignment:
+                                                                  Alignment
+                                                                      .center,
+                                                              height: SizeUtils
+                                                                      .height *
+                                                                  0.045,
+                                                              width: SizeUtils
+                                                                      .width *
+                                                                  0.15,
+                                                              child: Text(
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                "Cancel",
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .white,
+                                                                    fontSize:
+                                                                        15,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold),
+                                                              ),
+                                                              decoration: BoxDecoration(
+                                                                  color: Color(
+                                                                      0xFF00AA40),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              10)),
+                                                            ),
                                                           ),
-                                                          decoration: BoxDecoration(
-                                                              color:
-                                                                  Colors.green,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          10)),
                                                         ),
                                                       ),
-                                                    ),
-                                                  ),
-                                                  Expanded(
-                                                    child: Padding(
-                                                      padding: EdgeInsets.all(
-                                                          SizeUtils.width *
-                                                              0.02),
-                                                      child: GestureDetector(
-                                                        onTap: () {
-                                                          Navigator.pop(
-                                                              context);
-                                                        },
-                                                        child: Container(
-                                                          alignment:
-                                                              Alignment.center,
-                                                          height: 40,
-                                                          width: 150,
-                                                          child: Text(
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            "Confirm",
-                                                            style: TextStyle(
-                                                                color: Colors
-                                                                    .white,
-                                                                fontSize: 15,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold),
+                                                      Expanded(
+                                                        child: Padding(
+                                                          padding: EdgeInsets
+                                                              .all(SizeUtils
+                                                                      .width *
+                                                                  0.02),
+                                                          child:
+                                                              GestureDetector(
+                                                            onTap: () {
+                                                              Navigator.pop(
+                                                                  context);
+                                                            },
+                                                            child: Container(
+                                                              alignment:
+                                                                  Alignment
+                                                                      .center,
+                                                              height: SizeUtils
+                                                                      .height *
+                                                                  0.045,
+                                                              width: SizeUtils
+                                                                      .width *
+                                                                  0.15,
+                                                              child: Text(
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                "Confirm",
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .white,
+                                                                    fontSize:
+                                                                        15,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold),
+                                                              ),
+                                                              decoration: BoxDecoration(
+                                                                  color: Color(
+                                                                      0xFFD41000),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              10)),
+                                                            ),
                                                           ),
-                                                          decoration: BoxDecoration(
-                                                              color: Colors.red,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          10)),
                                                         ),
-                                                      ),
-                                                    ),
+                                                      )
+                                                    ],
                                                   )
                                                 ],
                                               ));
                                     },
                                     child: Container(
                                       alignment: Alignment.center,
-                                      height: 40,
-                                      width: 150,
+                                      height: SizeUtils.height * 0.045,
+                                      width: SizeUtils.width * 0.15,
                                       child: Text(
                                         textAlign: TextAlign.center,
                                         "Submit Resignation",
@@ -338,7 +424,7 @@ Do you still wish to proceed with your resignation?
                                             fontWeight: FontWeight.bold),
                                       ),
                                       decoration: BoxDecoration(
-                                          color: Colors.red,
+                                          color: Color(0xFFD41000),
                                           borderRadius:
                                               BorderRadius.circular(10)),
                                     ),
@@ -394,10 +480,12 @@ class Alert_Box extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: Color(0xFF1A1A1A),
+      backgroundColor: Color(0xFF2A2A2A),
       content: Container(
+        padding: EdgeInsets.only(top: SizeUtils.height * 0.01),
         width: SizeUtils.width * .9,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
@@ -417,12 +505,86 @@ class Alert_Box extends StatelessWidget {
               body,
               style: TextStyle(
                 color: Colors.white,
-                fontWeight: FontWeight.normal,
+                fontWeight: FontWeight.w500,
                 fontSize: 13,
               ),
             ),
             SizedBox(
-              height: SizeUtils.height * 0.04,
+              height: SizeUtils.height * 0.02,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: SizeUtils.width * 0.03),
+              child: Column(
+                children: [
+                  Text(
+                    '• Flexible Work Hours: Enjoy the freedom to balance work and personal life with our adaptable schedules.',
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  SizedBox(
+                    height: SizeUtils.height * 0.01,
+                  ),
+                  Text(
+                    '• Work-from-Home Opportunities: Continue working from the comfort of your home',
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  SizedBox(
+                    height: SizeUtils.height * 0.01,
+                  ),
+                  Text(
+                    '• High-Paid Commissions: Maximize your earnings with competitive commission structures.',
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  SizedBox(
+                    height: SizeUtils.height * 0.01,
+                  ),
+                  Text(
+                    '• Career Growth: Unlock new opportunities for promotions and skill development.',
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  SizedBox(
+                    height: SizeUtils.height * 0.01,
+                  ),
+                  Text(
+                    '• Employee Rewards and Recognition: Be part of a culture that values your contributions',
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: SizeUtils.height * 0.03,
+            ),
+            Text(
+              "Do you still wish to proceed with your resignation?",
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
+            ),
+            SizedBox(
+              height: SizeUtils.height * 0.02,
             ),
             Row(
               children: actions!,

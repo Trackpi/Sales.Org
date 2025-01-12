@@ -1,6 +1,7 @@
 // deekshith
 
 import 'package:flutter/material.dart';
+import 'package:sales_org/routes/app_routes.dart';
 import 'package:sales_org/utils/size_utils.dart';
 
 class SocialmediaDeclarationformMainpage extends StatefulWidget {
@@ -58,13 +59,6 @@ class _SocialmediaDeclarationformMainpageState
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.black, // Matches the overall theme.
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.white,
-          ),
-          onPressed: () {}, // Add navigation logic here.
-        ),
         title: Text(
           'Social Media Declaration',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -93,30 +87,38 @@ class _SocialmediaDeclarationformMainpageState
                     SizeUtils.height * 0.01, // Spacer for layout adjustment.
               ),
               // My Submissions section.
-              Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: SizeUtils.width * 0.03,
+              GestureDetector(
+                onTap: () {
+                  //navigation
+                  Navigator.pushNamed(
+                      context, AppRoutes.socialMediaSubmissionPage);
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: SizeUtils.width * 0.03,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "My Submissions",
+                        style:
+                            TextStyle(color: Color(0xffFFB300), fontSize: 17),
+                      ),
+                      Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: Color(0xffFFB300),
+                      )
+                    ],
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(10), // Rounded corners.
+                    border: Border.all(color: Color(0xffFFB300), width: 2),
+                  ),
+                  height: SizeUtils.height * 0.06, // Sets height dynamically.
+                  width: SizeUtils.width * 1, // Takes full width.
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "My Submissions",
-                      style: TextStyle(color: Color(0xffFFB300), fontSize: 17),
-                    ),
-                    Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      color: Color(0xffFFB300),
-                    )
-                  ],
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(10), // Rounded corners.
-                  border: Border.all(color: Color(0xffFFB300), width: 2),
-                ),
-                height: SizeUtils.height * 0.06, // Sets height dynamically.
-                width: SizeUtils.width * 1, // Takes full width.
               ),
               SizedBox(
                 height:

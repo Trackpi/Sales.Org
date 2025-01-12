@@ -13,10 +13,6 @@ class SocialMediaDeclarationForm extends StatelessWidget {
         backgroundColor: Colors.black,
         appBar: AppBar(
           backgroundColor: Colors.black,
-          leading: Icon(
-            Icons.arrow_back,
-            color: Colors.white,
-          ),
           title: Text(
             "Social Media Declaration",
             style: TextStyle(
@@ -77,7 +73,8 @@ class SocialMediaDeclarationForm extends StatelessWidget {
                             borderRadius: BorderRadius.vertical(
                               top: Radius.circular(10),
                             ),
-                            color: Colors.grey, // Black background for the card
+                            color: Color(
+                                0xFF2A2A2A), // Black background for the card
                           ),
                         ),
                         // Footer section
@@ -152,8 +149,8 @@ class SocialMediaDeclarationForm extends StatelessWidget {
                               borderRadius: BorderRadius.vertical(
                                 top: Radius.circular(10),
                               ),
-                              color:
-                                  Colors.grey, // Black background for the card
+                              color: Color(
+                                  0xFF2A2A2A), // Black background for the card
                             ),
                           ),
                           // Footer section

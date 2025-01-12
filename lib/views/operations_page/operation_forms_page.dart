@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sales_org/routes/app_routes.dart';
 import 'package:sales_org/theme/constants.dart';
 import 'package:sales_org/utils/size_utils.dart';
 import 'package:sales_org/views/operations_page/dummydb/dummydb.dart';
@@ -41,32 +42,38 @@ class FormsPageOperations extends StatelessWidget {
             horizontal: SizeUtils.width * 0.04,
             vertical: SizeUtils.height * 0.01),
         child: ListView.separated(
-            itemBuilder: (context, index) => Container(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: SizeUtils.width * 0.06),
-                  height: SizeUtils.height * 0.13,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        child: Text(
-                          OperationDummydb.formList[index].toString(),
-                          style: TextStyle(
-                              color: pureWhite,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18),
+            itemBuilder: (context, index) => GestureDetector(
+                  onTap: () {
+                    //navigation
+                    Navigator.pushNamed(context, AppRoutes.socialMediaMainPage);
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: SizeUtils.width * 0.06),
+                    height: SizeUtils.height * 0.13,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: Text(
+                            OperationDummydb.formList[index].toString(),
+                            style: TextStyle(
+                                color: pureWhite,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
                         ),
-                      ),
-                      Icon(
-                        Icons.arrow_forward_ios,
-                        color: pureWhite,
-                        size: 22,
-                      )
-                    ],
-                  ),
-                  decoration: BoxDecoration(
-                    color: containerBlackColor,
-                    borderRadius: BorderRadius.circular(10),
+                        Icon(
+                          Icons.arrow_forward_ios,
+                          color: pureWhite,
+                          size: 22,
+                        )
+                      ],
+                    ),
+                    decoration: BoxDecoration(
+                      color: containerBlackColor,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                   ),
                 ),
             separatorBuilder: (context, index) => SizedBox(
