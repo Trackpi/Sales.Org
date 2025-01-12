@@ -31,7 +31,8 @@ class _ForgotPasskeypageState extends State<ForgotPasskeypage> {
         ),
         title: Text(
           'Operations', // Title text in the app bar
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
         ),
         actions: [
           IconButton(
@@ -39,7 +40,6 @@ class _ForgotPasskeypageState extends State<ForgotPasskeypage> {
             icon: Icon(
               Icons.notifications_outlined,
               color: Colors.white,
-              size: 28,
             ),
             onPressed: () {
               // Define notification button functionality here
@@ -49,19 +49,16 @@ class _ForgotPasskeypageState extends State<ForgotPasskeypage> {
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(
-            horizontal: SizeUtils.width * 0.02,
-            vertical: SizeUtils.height * 0.01),
+            horizontal: SizeUtils.width * 0.04,
+            vertical: SizeUtils.height * 0.04),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              height: SizeUtils.height * 0.03,
-            ), // Adds vertical spacing
             Text(
               "Reset Your Passkey", // Main heading
               style: TextStyle(
                   color: Colors.white,
-                  fontSize: 18,
+                  fontSize: 16,
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(
@@ -70,48 +67,56 @@ class _ForgotPasskeypageState extends State<ForgotPasskeypage> {
             Text(
               "Security Questions", // Subheading
               style: TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-              ),
+                  color: Colors.white,
+                  fontSize: 15,
+                  fontWeight: FontWeight.normal),
             ),
             SizedBox(
               height: SizeUtils.height * 0.02,
             ),
             // Container for security question input
             Container(
-              padding: EdgeInsets.symmetric(
-                  horizontal: SizeUtils.width * 0.02,
-                  vertical: SizeUtils.height * 0.01),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "What's your date of birth?", // Label for input
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 16,
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: SizeUtils.width * 0.02,
+                        vertical: SizeUtils.height * 0.01),
+                    height: SizeUtils.height * 0.052,
+                    width: SizeUtils.width * 1.0,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Text(
+                      "What's your date of birth?", // Label for input
+                      style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 15,
+                      ),
                     ),
                   ),
                   SizedBox(
-                    height: SizeUtils.height * 0.01,
-                  ),
-                  SizedBox(
-                    height: SizeUtils.height * 0.05,
+                    // height: SizeUtils.height * 0.05,
                     child: TextField(
                       // Input field for date of birth
                       style: TextStyle(color: Colors.white),
                       keyboardType: TextInputType.datetime,
                       decoration: InputDecoration(
-                          hintText: "__ / __ / ____", // Placeholder text
-                          hintStyle: TextStyle(color: Colors.white54),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white54),
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
-                            borderRadius: BorderRadius.circular(8),
-                          ),
+                          border:
+                              OutlineInputBorder(borderSide: BorderSide.none),
+                          hintText: "_ _ / _ _ / _ _ _ _", // Placeholder text
+                          hintStyle: TextStyle(
+                              color: Colors.white54,
+                              fontWeight: FontWeight.bold),
+                          // enabledBorder: OutlineInputBorder(
+                          //   borderSide: BorderSide(color: Colors.white54),
+                          //   borderRadius: BorderRadius.circular(8),
+                          // ),
+                          // focusedBorder: OutlineInputBorder(
+                          //   borderSide: BorderSide(color: Colors.white),
+                          //   borderRadius: BorderRadius.circular(8),
+                          // ),
                           filled: true,
                           fillColor: Colors.black
                           // Colors.grey[900], // Input background color
@@ -121,7 +126,7 @@ class _ForgotPasskeypageState extends State<ForgotPasskeypage> {
                 ],
               ),
               height: SizeUtils.height * 0.12, // Height of the container
-              width: SizeUtils.width * 1, // Width of the container
+              // width: SizeUtils.width * 1, // Width of the container
               decoration: BoxDecoration(
                   border: Border.all(color: Colors.white, width: 1),
                   borderRadius: BorderRadius.circular(10),
