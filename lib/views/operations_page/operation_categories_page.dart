@@ -195,37 +195,42 @@ class OperationCategoriesPage extends StatelessWidget {
               ),
 
               //ticket raise
-              Container(
-                padding:
-                    EdgeInsets.symmetric(horizontal: SizeUtils.width * 0.07),
-                height: SizeUtils.height * 0.135,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Ticket Raise",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
-                    Icon(
-                      Icons.arrow_forward_ios,
-                      color: Colors.white,
-                      size: 22,
-                    )
-                  ],
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, AppRoutes.openedTicketsPage);
+                },
+                child: Container(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: SizeUtils.width * 0.07),
+                  height: SizeUtils.height * 0.135,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Ticket Raise",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                      ),
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.white,
+                        size: 22,
+                      )
+                    ],
+                  ),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                          fit: BoxFit.cover,
+                          colorFilter: ColorFilter.mode(
+                            Colors.black.withAlpha(
+                                80), // Make the image slightly transparent
+                            BlendMode.dstATop,
+                          ),
+                          image: AssetImage(Assets.png.ticket.path))),
                 ),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                        fit: BoxFit.cover,
-                        colorFilter: ColorFilter.mode(
-                          Colors.black.withAlpha(
-                              80), // Make the image slightly transparent
-                          BlendMode.dstATop,
-                        ),
-                        image: AssetImage(Assets.png.ticket.path))),
               ),
             ],
           ),

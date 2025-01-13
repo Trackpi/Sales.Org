@@ -23,6 +23,11 @@ import 'package:sales_org/views/promotion_photo_video/promotion_photo_video.dart
 import 'package:sales_org/views/search/search.dart';
 import 'package:sales_org/views/splash_screen/splash_screen.dart';
 import 'package:sales_org/views/testimonials/testimonials.dart';
+import 'package:sales_org/views/ticket_raising_page/closedtickets_page.dart';
+import 'package:sales_org/views/ticket_raising_page/openedtickets_page.dart';
+import 'package:sales_org/views/ticket_raising_page/selectclient_page.dart';
+import 'package:sales_org/views/ticket_raising_page/ticket_against_client.dart';
+import 'package:sales_org/views/ticket_raising_page/ticket_against_trackpi.dart';
 
 /// This class manages the routes for the application.
 /// It provides static constants for route names and a method to generate routes.
@@ -52,6 +57,11 @@ class AppRoutes {
   static const String socialMediaMainPage =
       '/SocialmediaDeclarationformMainpage';
   static const String socialMediaSubmissionPage = '/SocialMediaDeclarationForm';
+  static const String openedTicketsPage = '/OpenedticketsPage';
+  static const String closedTicketsPage = '/ClosedticketsPage';
+  static const String selectClientPage = '/SelectClient';
+  static const String ticketAgainstClient = '/TicketAgainstClient';
+  static const String ticketAgainstCompany = '/TicketAgainstTrackpi';
 
   /// Generates the appropriate route based on the given [settings].
   ///
@@ -160,6 +170,26 @@ class AppRoutes {
         // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(
             builder: (_) => const SocialMediaDeclarationForm());
+
+      case openedTicketsPage:
+        // Return a MaterialPageRoute that loads the LoginScreen widget
+        return MaterialPageRoute(builder: (_) => const OpenedticketsPage());
+
+      case closedTicketsPage:
+        // Return a MaterialPageRoute that loads the LoginScreen widget
+        return MaterialPageRoute(builder: (_) => const ClosedticketsPage());
+
+      case ticketAgainstClient:
+        // Return a MaterialPageRoute that loads the LoginScreen widget
+        return MaterialPageRoute(builder: (_) => const TicketAgainstClient());
+
+      case ticketAgainstCompany:
+        // Return a MaterialPageRoute that loads the LoginScreen widget
+        return MaterialPageRoute(builder: (_) => const TicketAgainstTrackpi());
+
+      case selectClientPage:
+        // Return a MaterialPageRoute that loads the LoginScreen widget
+        return MaterialPageRoute(builder: (_) => const SelectClient());
 
       // Default case when no matching route is found
       default:

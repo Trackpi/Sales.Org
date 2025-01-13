@@ -1,9 +1,10 @@
 //for gokul
 import 'package:flutter/material.dart';
+import 'package:sales_org/routes/app_routes.dart';
 import 'package:sales_org/utils/size_utils.dart';
 
-class SelectCompany extends StatelessWidget {
-  const SelectCompany({super.key});
+class SelectClient extends StatelessWidget {
+  const SelectClient({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,6 @@ class SelectCompany extends StatelessWidget {
           'Ticket Raise',
           style: TextStyle(color: Colors.white),
         ),
-        leading: Icon(Icons.arrow_back, color: Colors.white),
         actions: [
           IconButton(
             icon: Icon(Icons.search, color: Colors.white),
@@ -93,6 +93,8 @@ class SelectCompany extends StatelessWidget {
                         ),
                         onTap: () {
                           // Handle client selection
+                          Navigator.pushNamed(
+                              context, AppRoutes.ticketAgainstClient);
                         },
                       ),
                       SizedBox(

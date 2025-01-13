@@ -11,13 +11,7 @@ class TicketAgainstTrackpi extends StatelessWidget {
       backgroundColor: Colors.black, // Background color of the screen.
       appBar: AppBar(
         // AppBar with back button, title, and notification icon.
-        leading: IconButton(
-          onPressed: () {}, // Action for the back button.
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.white,
-          ),
-        ),
+
         centerTitle: true, // Centers the title in the AppBar.
         actions: [
           IconButton(

@@ -160,7 +160,7 @@ class _ForgotPasskeypageState extends State<ForgotPasskeypage> {
                                     size: 38,
                                   ),
                                 ),
-                                SizedBox(height: SizeUtils.height * 0.02),
+                                SizedBox(height: SizeUtils.height * 0.04),
                                 Text(
                                   'Correct!', // Title text
                                   style: TextStyle(
@@ -185,7 +185,7 @@ class _ForgotPasskeypageState extends State<ForgotPasskeypage> {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 16,
+                                    fontSize: 15,
                                   ),
                                 ),
                                 SizedBox(height: SizeUtils.height * 0.02),

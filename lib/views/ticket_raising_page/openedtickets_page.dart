@@ -1,5 +1,6 @@
 //for arjun
 import 'package:flutter/material.dart';
+import 'package:sales_org/routes/app_routes.dart';
 import 'package:sales_org/utils/size_utils.dart';
 
 class OpenedticketsPage extends StatefulWidget {
@@ -135,32 +136,37 @@ class _OpenedticketsPageState extends State<OpenedticketsPage> {
                           fontWeight: FontWeight.w600,
                           fontSize: 16),
                     ),
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.task_outlined,
-                          color: Colors.white,
-                          size: 18,
-                        ),
-                        SizedBox(
-                          width: SizeUtils.width * 0.015,
-                        ),
-                        Text(
-                          "Closed",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 15),
-                        ),
-                      ],
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(
+                            context, AppRoutes.closedTicketsPage);
+                      },
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.task_outlined,
+                            color: Colors.white,
+                            size: 18,
+                          ),
+                          SizedBox(
+                            width: SizeUtils.width * 0.015,
+                          ),
+                          Text(
+                            "Closed",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 15),
+                          ),
+                        ],
+                      ),
                     )
                   ],
                 ),
                 SizedBox(
                   height: SizeUtils.height * 0.03,
                 ),
-                SizedBox(
-                  height: SizeUtils.height * 0.62,
+                Expanded(
                   child: ListView.separated(
                     shrinkWrap: true,
                     physics: ScrollPhysics(),
@@ -273,6 +279,8 @@ class _OpenedticketsPageState extends State<OpenedticketsPage> {
                           GestureDetector(
                             onTap: () {
                               //navigate
+                              Navigator.pushNamed(
+                                  context, AppRoutes.selectClientPage);
                             },
                             child: CircleAvatar(
                               radius: SizeUtils.width * 0.06,
@@ -302,6 +310,8 @@ class _OpenedticketsPageState extends State<OpenedticketsPage> {
                           GestureDetector(
                             onTap: () {
                               //navigate
+                              Navigator.pushNamed(
+                                  context, AppRoutes.ticketAgainstCompany);
                             },
                             child: CircleAvatar(
                               radius: SizeUtils.width * 0.06,

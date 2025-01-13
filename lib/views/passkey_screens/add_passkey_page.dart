@@ -1,6 +1,7 @@
 //for gokul
 import 'package:flutter/material.dart';
 import 'package:sales_org/utils/size_utils.dart';
+import 'package:sales_org/views/passkey_screens/widget/common_button.dart';
 
 class AddPasskey extends StatelessWidget {
   const AddPasskey({super.key});
@@ -58,28 +59,8 @@ class AddPasskey extends StatelessWidget {
             ),
             SizedBox(height: SizeUtils.height * 0.025),
             _buildPasskeyFields(),
-            SizedBox(height: SizeUtils.height * 0.035),
-            Center(
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.orange,
-                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-                onPressed: () {
-                  // Add your submit logic here
-                },
-                child: Text(
-                  "Submit",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                  ),
-                ),
-              ),
-            ),
+            SizedBox(height: SizeUtils.height * 0.08),
+            Center(child: CommonButton()),
           ],
         ),
       ),
