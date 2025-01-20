@@ -165,10 +165,12 @@ class TodoListMainpage extends StatelessWidget {
                                   height: SizeUtils.height * 0.010,
                                 ),
                                 // Description of the to-do item
-                                Text(
-                                  "Lorem ipsum dolor sit amet consectetur. Ipsum dui nulla",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 13),
+                                Expanded(
+                                  child: Text(
+                                    "Lorem ipsum dolor sit amet consectetur. Ipsum dui nulla",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 13),
+                                  ),
                                 ),
                               ],
                             ),
