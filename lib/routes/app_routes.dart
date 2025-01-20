@@ -28,6 +28,7 @@ import 'package:sales_org/views/ticket_raising_page/openedtickets_page.dart';
 import 'package:sales_org/views/ticket_raising_page/selectclient_page.dart';
 import 'package:sales_org/views/ticket_raising_page/ticket_against_client.dart';
 import 'package:sales_org/views/ticket_raising_page/ticket_against_trackpi.dart';
+import 'package:sales_org/views/todo_list_page/todo_list_mainpage.dart';
 
 /// This class manages the routes for the application.
 /// It provides static constants for route names and a method to generate routes.
@@ -62,6 +63,7 @@ class AppRoutes {
   static const String selectClientPage = '/SelectClient';
   static const String ticketAgainstClient = '/TicketAgainstClient';
   static const String ticketAgainstCompany = '/TicketAgainstTrackpi';
+  static const String operationMainPageTodoList = '/TodoListMainpage';
 
   /// Generates the appropriate route based on the given [settings].
   ///
@@ -190,6 +192,10 @@ class AppRoutes {
       case selectClientPage:
         // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const SelectClient());
+
+      case operationMainPageTodoList:
+        // Return a MaterialPageRoute that loads the LoginScreen widget
+        return MaterialPageRoute(builder: (_) => const TodoListMainpage());
 
       // Default case when no matching route is found
       default:
