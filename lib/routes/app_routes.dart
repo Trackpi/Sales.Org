@@ -79,7 +79,6 @@ class AppRoutes {
     switch (settings.name) {
       // Case for splash screen route
       case splashScreen:
-        // Return a MaterialPageRoute that loads the SplashScreen widget
         return MaterialPageRoute(builder: (_) => const SplashScreen());
 
       case loginScreen:
@@ -87,114 +86,87 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const LoginScreen());
 
       case homeScreen:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const BottomNavbar());
 
       case companyProfile:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const CompanyProfile());
 
       case companyList:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const CompanyList());
 
       case products:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const Products());
 
       case productsProfile:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const ProductsProfile());
 
       case promotionPhotos:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const PromotionPhotoVideo());
 
       case testimonials:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const TestimonialsScreen());
 
       case posters:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const Posters());
 
       case homeSearch:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const Search());
 
       case faqSearch:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const TopSearchScreen());
 
       case faqSaved:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const FaqNoSavedScreen());
 
       case profileScreen:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const ProfileScreen());
 
       case documents:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const ProfileDocumentScreen());
 
       case personalInfo:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(
             builder: (_) => const ProfilePersonalInfoscreen());
 
       case teamDetails:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const TeamDetails());
 
       case passKey:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const PasskeyScreen());
 
       case resignationScreen:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const ResignationformScreen());
 
       case courseDetails:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const CoursedetailsScreen());
 
       case operationFormPage:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const FormsPageOperations());
 
       case socialMediaMainPage:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(
             builder: (_) => const SocialmediaDeclarationformMainpage());
 
       case socialMediaSubmissionPage:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(
             builder: (_) => const SocialMediaDeclarationForm());
 
       case openedTicketsPage:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const OpenedticketsPage());
 
       case closedTicketsPage:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const ClosedticketsPage());
 
       case ticketAgainstClient:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const TicketAgainstClient());
 
       case ticketAgainstCompany:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const TicketAgainstTrackpi());
 
       case selectClientPage:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const SelectClient());
 
       case operationMainPageTodoList:
-        // Return a MaterialPageRoute that loads the LoginScreen widget
         return MaterialPageRoute(builder: (_) => const TodoListMainpage());
 
       // Default case when no matching route is found
