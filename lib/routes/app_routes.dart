@@ -20,6 +20,7 @@ import 'package:sales_org/views/profile_screens/profile_screen.dart';
 import 'package:sales_org/views/profile_screens/resignationform_screen.dart';
 import 'package:sales_org/views/profile_screens/team_details.dart';
 import 'package:sales_org/views/promotion_photo_video/promotion_photo_video.dart';
+import 'package:sales_org/views/revenue_graph/Revenue_graph.dart';
 import 'package:sales_org/views/search/search.dart';
 import 'package:sales_org/views/splash_screen/splash_screen.dart';
 import 'package:sales_org/views/testimonials/testimonials.dart';
@@ -64,6 +65,7 @@ class AppRoutes {
   static const String ticketAgainstClient = '/TicketAgainstClient';
   static const String ticketAgainstCompany = '/TicketAgainstTrackpi';
   static const String operationMainPageTodoList = '/TodoListMainpage';
+  static const String operationRevenuePage = '/Revenue_graph';
 
   /// Generates the appropriate route based on the given [settings].
   ///
@@ -168,6 +170,9 @@ class AppRoutes {
 
       case operationMainPageTodoList:
         return MaterialPageRoute(builder: (_) => const TodoListMainpage());
+
+      case operationRevenuePage:
+        return MaterialPageRoute(builder: (_) => const Revenue_graph());
 
       // Default case when no matching route is found
       default:

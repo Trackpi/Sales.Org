@@ -3,14 +3,14 @@ import 'package:sales_org/utils/size_utils.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:intl/intl.dart';
 
-class revenue_graph extends StatefulWidget {
-  const revenue_graph({super.key});
+class Revenue_graph extends StatefulWidget {
+  const Revenue_graph({super.key});
 
   @override
-  State<revenue_graph> createState() => _revenue_graphState();
+  State<Revenue_graph> createState() => _Revenue_graphState();
 }
 
-class _revenue_graphState extends State<revenue_graph> {
+class _Revenue_graphState extends State<Revenue_graph> {
   // Dropdown default values
   String dropdownValue = 'Last Year'; // For the first dropdown
   String dropdownValue2 = ' Year'; // For the second dropdown
