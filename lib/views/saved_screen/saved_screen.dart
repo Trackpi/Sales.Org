@@ -1,7 +1,6 @@
 //saved
 import 'package:flutter/material.dart';
 
-import 'package:sales_org/views/saved_screen/tabview.dart';
 import 'package:sales_org/widgets/brochure_card.dart';
 
 import '../../gen/assets.gen.dart';
@@ -85,82 +84,8 @@ class SavedScreen extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
-            //posters screen
-            // GridView.builder(
-            //   padding: EdgeInsets.symmetric(
-            //       horizontal: SizeUtils.width * 0.04,
-            //       vertical: SizeUtils.height * 0.02),
-            //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            //     crossAxisCount: 2, // 2 items per row
-            //     crossAxisSpacing: 12.0, // Space between items horizontally
-            //     mainAxisSpacing: 12.0, // Space between items vertically
-            //     childAspectRatio: 0.8, // Adjusts item size aspect ratio
-            //   ),
-            //   itemCount: 10, // Number of items in the grid
-            //   itemBuilder: (context, index) => Stack(
-            //     children: [
-            //       // Background Container
-            //       Container(
-            //         decoration: BoxDecoration(
-            //           image: DecorationImage(
-            //             fit: BoxFit.cover, // Scales image to fit container
-            //             image: AssetImage("assets/png/company.png"),
-            //           ),
-            //           color: Colors.white,
-            //           borderRadius:
-            //           BorderRadius.circular(10), // Rounded corners
-            //           boxShadow: [
-            //             BoxShadow(
-            //               color: Colors.grey.withOpacity(0.5), // Shadow color
-            //               spreadRadius: 2, // Shadow spread
-            //               blurRadius: 5, // Shadow blur
-            //               offset: Offset(0, 3), // Position of shadow
-            //             ),
-            //           ],
-            //         ),
-            //         padding:
-            //         const EdgeInsets.all(8.0), // Padding inside container
-            //       ),
-            //       // Save Icon at the Top Right
-            //       Positioned(
-            //         top: 2,
-            //         right: 5,
-            //         child: IconButton(
-            //           onPressed: () {
-            //             // Save action goes here
-            //           },
-            //           icon: Icon(
-            //             Icons.bookmark,
-            //             color: Color(0xffFFB300), // Icon color
-            //           ),
-            //         ),
-            //       ),
-            //       // Eye Icon at the Bottom Right
-            //       Positioned(
-            //         bottom: 10,
-            //         right: 10,
-            //         child: Row(
-            //           children: [
-            //             Text(
-            //               "10K", // View count text
-            //               style: TextStyle(
-            //                 color: Color(0xffFFB300), // Text color
-            //                 fontSize: 13,
-            //               ),
-            //             ),
-            //             Icon(
-            //               Icons.share,
-            //               size: 13, // Icon size
-            //               color: Color(0xffFFB300), // Icon color
-            //             ),
-            //           ],
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // ),
             //saved companies
-            TView('Cpmpany Name', 'type of company'),
+            TView('Company Name', 'type of company'),
             //saved products
             TView('Product Name', 'price : 0000'),
 
@@ -178,80 +103,8 @@ class SavedScreen extends StatelessWidget {
               itemCount: 5, // Number of items
               itemBuilder: (context, index) {
                 return BrochureCard();
-                //   Container(
-                //  decoration: BoxDecoration(
-                //      color: Color(0xFFFCB205),
-                //
-                //      borderRadius: BorderRadius.circular(10)
-                //  ),
-                //   child: Stack(
-                //     children: [
-                //       // Card Container
-                //       Container(
-                //         alignment: Alignment.bottomCenter,
-                //         width: double.infinity,
-                //         height: 193,
-                //         decoration: BoxDecoration(
-                //           color: Colors.black,
-                //           image: DecorationImage(
-                //               fit: BoxFit.contain,
-                //               image: AssetImage("assets/png/company.png")),
-                //           borderRadius: BorderRadius.circular(10),
-                //         ),
-                //         child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //           mainAxisSize: MainAxisSize.max,
-                //           children: [
-                //             Container(
-                //               color: Colors.orange,
-                //               child: Text('brochure'),
-                //             ),
-                //           ],
-                //         ),
-                //       ),
-                //
-                //       // Bookmark Icon
-                //       Positioned(
-                //         top: 8,
-                //         right: 8,
-                //         child: Icon(
-                //           Icons.bookmark,
-                //           color: Colors.orange,
-                //           size: 30,
-                //         ),
-                //       ),
-                //       // Positioned(
-                //       //   bottom: 10,
-                //       //   left: 8,
-                //       //   child: Text('Brochures')
-                //       // ),
-                //       //
-                //       // Positioned(
-                //       //   bottom: 10,
-                //       //   right: 8,
-                //       //   child: Row(
-                //       //     mainAxisSize: MainAxisSize.min,
-                //       //     children: [
-                //       //       Icon(
-                //       //         Icons.file_download_outlined,
-                //       //         color: Colors.white,
-                //       //         size: 18,
-                //       //       ),
-                //       //       SizedBox(width: 6),
-                //       //       Icon(
-                //       //         Icons.share,
-                //       //         color: Colors.white,
-                //       //         size: 18,
-                //       //       ),
-                //       //     ],
-                //       //   ),
-                //       // ),
-                //     ],
-                //   ),
-                // );
               },
             ),
-            TabView(),
-            TabView()
           ],
         ),
       ),
@@ -271,7 +124,7 @@ class TView extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: SizeUtils.height * 0.01,
+          height: SizeUtils.height * 0.02,
         ),
         Expanded(
           child: GridView.builder(
@@ -323,22 +176,26 @@ class TView extends StatelessWidget {
                       SizedBox(
                         height: 8,
                       ),
-                      Text(
-                        s,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.normal,
-                            fontSize: 14),
+                      Expanded(
+                        child: Text(
+                          s,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 14),
+                        ),
                       ),
                       SizedBox(
                         height: 8,
                       ),
-                      Text(
-                        t,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.normal,
-                            fontSize: 12),
+                      Expanded(
+                        child: Text(
+                          t,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 12),
+                        ),
                       )
                     ],
                   ),
