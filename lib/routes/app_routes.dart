@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:sales_org/views/bottom_navbar/bottom_navbar.dart';
+import 'package:sales_org/views/employee/bottom_navbar/bottom_navbar.dart';
 import 'package:sales_org/views/company_list/company_list.dart';
 import 'package:sales_org/views/company_profile/company_profile.dart';
 import 'package:sales_org/views/coursedetails_screen/coursedetails_screen.dart';
 import 'package:sales_org/views/faqs_screen/faq_no_saved_screen.dart';
 import 'package:sales_org/views/faqs_screen/top_search_screen.dart';
 
-import 'package:sales_org/views/login_screen/login_screen.dart';
+import 'package:sales_org/views/employee/login_screen/login_screen.dart';
 import 'package:sales_org/views/operations_page/operation_forms_page.dart';
 import 'package:sales_org/views/operations_page/socialmedia_declarationform.dart';
 import 'package:sales_org/views/operations_page/socialmedia_declarationform_mainpage.dart';
@@ -22,7 +22,7 @@ import 'package:sales_org/views/profile_screens/team_details.dart';
 import 'package:sales_org/views/promotion_photo_video/promotion_photo_video.dart';
 import 'package:sales_org/views/revenue_graph/Revenue_graph.dart';
 import 'package:sales_org/views/search/search.dart';
-import 'package:sales_org/views/splash_screen/splash_screen.dart';
+import 'package:sales_org/views/employee/splash_screen/splash_screen.dart';
 import 'package:sales_org/views/testimonials/testimonials.dart';
 import 'package:sales_org/views/ticket_raising_page/closedtickets_page.dart';
 import 'package:sales_org/views/ticket_raising_page/openedtickets_page.dart';
